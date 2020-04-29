@@ -1,215 +1,211 @@
-.bg-services {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  &__gradient {
-    position: absolute;
-    will-change: background-image;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(
-        100vh at 4% -18%,
-        #6149e154 6%,
-        #6149e14d 13%,
-        #6149e105 76%,
-        #15102700 103%
-      ),
-      radial-gradient(54vh at 65% 55%, #6f56ac26, transparent),
-      radial-gradient(33vh at 78% 45%, #0a0612ed, transparent),
-      radial-gradient(30vh at 59% 41%, #040207ed, transparent),
-      radial-gradient(30vh at 59% 58%, #020104fc, transparent 70%),
-      radial-gradient(30vh at 79% 61%, #02010496, transparent 50%),
-      radial-gradient(42vh at 69% 53%, #000000fa, transparent),
-      radial-gradient(
-        84vh at 100% 100%,
-        #6149e170 -1%,
-        #6149e15c 22%,
-        #6149e147 39%,
-        #6149e138 50%,
-        #6149e114 86%,
-        #1a102700 124%
-      ),
-      linear-gradient(
-        115deg,
-        #090614 0%,
-        #0f0920f5 13%,
-        #0f0920db 22%,
-        transparent 41%
-      );
-  }
+@import "./background.scss";
+@import "./react_picker_date.scss";
 
-  &__car {
-    position: absolute;
-    bottom: -30px;
-    left: -218px;
-    transform: scale(0.8);
-    animation: anim-car 0.5s ease-in-out;
-  }
-}
-
-.services {
+.home {
   grid-area: content;
   position: relative;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-areas: "header services";
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15vh 7vw 8vh 7vw;
   &__header {
-    grid-area: header;
     position: relative;
-    padding-top: 7%;
-    padding-left: 20%;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
     h1 {
       position: relative;
-      z-index: 2000;
-      font-size: var(--h1);
-      color: var(--white);
+      font-size: 120px;
       font-weight: 400;
-      margin-bottom: 85px;
-      animation: anim-text 0.5s ease-in-out;
-      &::before {
+      color: var(--white);
+      line-height: 80%;
+      opacity: 0;
+      animation: var(--anim-op-05s);
+      &::after {
         content: attr(data-text);
+        width: max-content;
         position: absolute;
-        top: 30%;
-        left: -10%;
-        font-size: 80px;
+        top: -47%;
+        left: -14%;
+        font-size: 120px;
         font-weight: 900;
-        // color: #271b47;
-        background: linear-gradient(
-          180deg,
-          transparent 19%,
-          #764ae24d 140%
-        );
+        background-image: linear-gradient(to top, #2a2048, transparent 90%);
         background-clip: text;
         -webkit-text-fill-color: transparent;
         z-index: -1;
       }
     }
-    p {
+    .help {
       position: relative;
-      font-size: var(--p);
-      color: #74688c;
-      font-weight: 500;
+      align-self: center;
+      left: -10%;
+      color: var(--red);
+      font-size: var(--h3);
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 4vh 0 8vh 0;
+      filter: drop-shadow(10% 23px 5vw var(--red));
       opacity: 0;
-      animation: anim-text 0.5s ease-in-out 0.1s forwards;
+      animation: var(--anim-op-05s) var(--anim-op-delay1);
       &::before {
         content: "";
         position: absolute;
-        top: -40%;
-        height: 2px;
-        width: 20%;
-        background-color: #45306e5e;
+        bottom: 20%;
+        left: 110%;
+        height: 1px;
+        width: 100%;
+        background-color: var(--red);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 25%;
+        left: -8%;
+        height: 50%;
+        width: 120%;
+        background-color: var(--red);
+        filter: blur(54px);
+      }
+    }
+    .description {
+      position: relative;
+      left: 6%;
+      opacity: 0;
+      animation: var(--anim-op-05s) var(--anim-op-delay2);
+      h2 {
+        font-size: var(--h3);
+        color: var(--white);
+        font-weight: 500;
+        line-height: 50%;
+        margin-bottom: 1em;
+      }
+      p {
+        font-size: var(--p);
+        font-weight: 500;
+        line-height: 130%;
+        color: var(--paragraf);
       }
     }
   }
-  &__services {
-    grid-area: services;
-    padding-top: 20%;
+  &__search {
+    position: relative;
+    width: 100%;
+    height: 10vh;
     display: flex;
-    flex-wrap: wrap;
-    word-wrap: break-word;
-    position: absolute;
-    .service {
-      cursor: pointer;
+    align-items: center;
+    opacity: 0;
+    animation: var(--anim-op-05s) var(--anim-op-delay3);
+    .tools {
       position: relative;
-      width: 30%;
-      height: 70px;
-      margin: 0 2% 2% 0;
-      padding: 27px 30px;
-      background: #1f1d31;
-      z-index: 4000;
-      transform: scale(1);
-      &[data-order="1"] {
-        transform-origin: 60% 140%;
-      }
-      &[data-order="2"] {
-        transform-origin: 40% 140%;
-      }
-      &[data-order="3"] {
-        transform-origin: 60% -40%;
-      }
-      &[data-order="4"] {
-        transform-origin: 40% -40%;
-      }
-      transition: transform 150ms ease-out;
-      .header {
-        display: flex;
-        &__icon {
-          margin-right: 12%;
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          background-color: #27243c;
-          box-shadow: -3px -2px 2px 1px #110c14d6, 0px 0px 1px 3px #6e3994,
-            1px 0px 3px 4px #110c1499, inset -1px 0px 2px 2px #110c145e;
-        }
-        &__text {
-          color: var(--white);
-          font-weight: 400;
-          font-size: var(--p);
-          letter-spacing: 0.5px;
-          font-weight: 500;
-          &::before {
-            content: "";
-            position: absolute;
-            bottom: 50%;
-            height: 2px;
-            width: 11%;
-            background-color: var(--purple);
-            box-shadow: 0 0 11px 0px #9642f2;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background-color: #3c3a674f;
+
+      .tools__geo,
+      .react-datepicker-wrapper {
+        height: 70%;
+        width: calc(100% / 3);
+
+        cursor: pointer;
+        &:hover {
+          p {
+            color: #9c89c0;
+          }
+          svg {
+            fill: #e4d1f5;
           }
         }
       }
-      &:hover {
-        transform: scale(1.3);
+      .react-datepicker-wrapper {
+        .react-datepicker__input-container {
+          height: 100%;
+          display: grid;
+        }
+      }
+
+      .tool {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-right: 2px solid #363452;
+        p {
+          margin-left: 2em;
+          font-size: var(--p);
+          font-weight: 500;
+          letter-spacing: 0.02em;
+          text-transform: capitalize;
+          color: #7a6b96;
+          transition: color 0.3s;
+        }
+        svg {
+          margin-right: 2em;
+          position: relative;
+          width: 0.2em;
+          top: 0;
+          fill: var(--white);
+          transform: rotate(90deg) translateX(-0.3em);
+        }
+      }
+    //   &__geo {
+    //   }
+    //   &__up-date {
+    //   }
+      &__return-date {
+        border: none !important;
+      }
+    }
+    .btn-search {
+      position: relative;
+      height: 100%;
+      width: 12vw;
+      min-width: 20vh;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+      &__inner {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-color: var(--blue);
         background-image: radial-gradient(
           100px at 100% 60%,
           #311ca1,
           transparent 267%
         );
-        z-index: 5000;
-        box-shadow: 0px 0px 80px 0px #6f56ac7d;
-        transition: transform 0.3s ease-out;
-        .header {
-          &__icon {
-            background-color: var(--blue);
-            background-image: linear-gradient(
-              -180deg,
-              #311ca1,
-              transparent 120%
-            );
-            box-shadow: -2px -1px 2px 0px #1e06cdd6, 0px 0px 1px 2px #b2a3c0,
-              1px 0px 3px 2px #0b008dd4, inset -1px 0px 2px 2px #00026f0a;
-          }
-          &__text {
-            &::before {
-              background-color: var(--white);
-              box-shadow: 0 0 11px 0px var(--white);
-            }
-          }
+        font-size: var(--p);
+        font-weight: 500;
+        text-transform: uppercase;
+        color: var(--white);
+      }
+      /* keyboard-only focus */
+      &:hover,
+      &:focus {
+        .btn-search__inner {
+          background-color: var(--purple);
+          background-image: radial-gradient(
+            100px at 100% 60%,
+            #23113fab,
+            transparent 267%
+          );
+          box-shadow: 0px 0px 3vh 0px #201131d3;
         }
       }
+      /* keyboard-only focus */
+      &:focus {
+        .btn-search__inner {
+          --blue: var(--purple);
+          outline: var(--focus-outline);
+          outline-offset: 1px;
+        }
+      }
+      &:focus,
+      &__inner:focus {
+        outline: none;
+      }
     }
-  }
-}
-
-@keyframes anim-car {
-  from {
-    left: -880px;
-  }
-  to {
-    left: -218px;
-  }
-}
-
-@keyframes anim-text {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }

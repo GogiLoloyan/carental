@@ -4,6 +4,7 @@
   height: 90vh;
   grid-template-columns: 5vw 90vw 5vw;
   grid-template-areas: "left content right";
+  overflow: hidden;
 }
 
 .left-nav {
@@ -24,6 +25,7 @@
       &[data-team="blue"] {
         --team: var(--blue);
       }
+      cursor: pointer;
       position: absolute;
       top: calc(calc(var(--top, 0) * 100% / 11) - 1.5px);
       height: calc(calc(100% / 11 * 5) + 3px);
@@ -42,7 +44,7 @@
         &__front {
           height: 100%;
           position: absolute;
-          width: 4px;
+          width: 3px;
           border-radius: 3px;
           background-color: var(--team);
           transition: background-color 0.4s ease-out;
@@ -64,19 +66,44 @@
       }
     }
     &__back {
+      /// to create 12 small circle you can use one of these variants
+      /// variant first using 12 radial-gradient
       position: absolute;
-      left: 1px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: space-between;
-      height: 100%;
-      span {
-        width: 2px;
-        height: 2px;
-        border-radius: 50%;
-        background-color: var(--white);
-      }
+      height: 103%;
+      width: 5px;
+      --width: 1px;
+      --aligh-items: 30%;
+      --delta: -0.5px;
+      --mul: 0.97;
+      background-image: 
+        radial-gradient(var(--width) at var(--aligh-items) 1%, var(--white) 70%, transparent 120%),
+        radial-gradient(var(--width) at var(--aligh-items) calc(100% / 11 * 1 * var(--mul) + var(--delta)), var(--white) 70%, transparent 120%),
+        radial-gradient(var(--width) at var(--aligh-items) calc(100% / 11 * 2 * var(--mul) + var(--delta)), var(--white) 70%, transparent 120%),
+        radial-gradient(var(--width) at var(--aligh-items) calc(100% / 11 * 3 * var(--mul) + var(--delta)), var(--white) 70%, transparent 120%),
+        radial-gradient(var(--width) at var(--aligh-items) calc(100% / 11 * 4 * var(--mul) + var(--delta)), var(--white) 70%, transparent 120%),
+        radial-gradient(var(--width) at var(--aligh-items) calc(100% / 11 * 5 * var(--mul) + var(--delta)), var(--white) 70%, transparent 120%),
+        radial-gradient(var(--width) at var(--aligh-items) calc(100% / 11 * 6 * var(--mul) + var(--delta)), var(--white) 70%, transparent 120%),
+        radial-gradient(var(--width) at var(--aligh-items) calc(100% / 11 * 7 * var(--mul) + var(--delta)), var(--white) 70%, transparent 120%),
+        radial-gradient(var(--width) at var(--aligh-items) calc(100% / 11 * 8 * var(--mul) + var(--delta)), var(--white) 70%, transparent 120%),
+        radial-gradient(var(--width) at var(--aligh-items) calc(100% / 11 * 9 * var(--mul) + var(--delta)), var(--white) 70%, transparent 120%),
+        radial-gradient(var(--width) at var(--aligh-items) calc(100% / 11 * 10 * var(--mul) + var(--delta)), var(--white) 70%, transparent 120%),
+        radial-gradient(var(--width) at var(--aligh-items) calc(100% / 11 * 11 * var(--mul) + var(--delta)), var(--white) 70%, transparent 120%);
+      
+      /// variant 2 using 12 span or div in html
+
+      // position: absolute;
+      // height: 100%;
+      // left: 1px;
+      // display: flex;
+      // flex-direction: column;
+      // align-items: flex-start;
+      // justify-content: space-between;
+      // span {
+      //   width: 2px;
+      //   height: 2px;
+      //   border-radius: 50%;
+      //   background-color: var(--white);
+      // }
     }
   }
 }
@@ -85,7 +112,7 @@
   grid-area: right;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  
   z-index: 1000;
   &__link {
     text-decoration: none;
@@ -94,16 +121,17 @@
       --deg: 90deg;
     }
     &[data-order="true"] {
-      --order: 0;
+      --order: 1;
       --deg: -90deg;
     }
     .link-content {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: fit-content;
+      width: calc(var(--p) + 5px);
       &__text {
         order: var(--order);
+        position: relative;
         text-transform: uppercase;
         font-size: var(--p);
         font-weight: 500;
@@ -111,15 +139,22 @@
         color: var(--white);
         // rotate text vertical
         writing-mode: vertical-rl;
-        transform: rotate(180deg);
+        transform: rotate(180deg);   
       }
       svg {
         position: relative;
         margin: 6px 0 6px 0;
         width: 5px;
         height: 5px;
+        top: 0;
         fill: var(--white);
         transform: rotate(var(--deg)) translateY(-80%);
+        animation: ticking 1s ease-in-out infinite var(--play-tcking, paused);
+      }
+      &:hover {
+        svg {
+          --play-tcking: running;
+        }
       }
     }
     &:focus {
@@ -132,5 +167,17 @@
     .link-content:focus {
       outline: none;
     }
+  }
+}
+
+@keyframes ticking {
+  from {
+    top: 0;
+  }
+  50% {
+    top: calc(var(--order) * -0.2em);
+  }
+  to {
+    top: 0;
   }
 }

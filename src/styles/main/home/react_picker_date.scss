@@ -1,0 +1,121 @@
+.react-datepicker__tab-loop {
+  // date
+  .react-datepicker-popper {
+    left: var(--home-calendar-left) !important;
+    transform: translate(-50%, -65vh) !important;
+    color: var(--white);
+
+    .react-datepicker {
+      background-color: #221e3c;
+      background-image: radial-gradient(
+        75vmin at 100% 100%,
+        #0f0c1a,
+        transparent
+      );
+      //   .react-datepicker__triangle {
+      //   }
+      &__navigation {
+        color: inherit;
+        padding: 0.5em;
+        position: relative;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        &:focus {
+          outline: none;
+        }
+      }
+      .react-datepicker__navigation--next {
+        float: right;
+      }
+      .react-datepicker__navigation--previous {
+        float: left;
+      }
+      &__month-container {
+        width: 50vh;
+        // calendar header
+        .react-datepicker__header {
+          position: relative;
+          padding: 0% 5%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-around;
+
+          height: 10vh;
+          width: 90%;
+          background-color: var(--blue);
+          background-image: radial-gradient(
+            88vmin at 0% 50%,
+            #311ca1,
+            transparent
+          );
+          .react-datepicker__current-month {
+            padding-top: 0.5em;
+          }
+          .react-datepicker__day-names {
+            align-self: stretch;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+            // day name * 7
+            // .react-datepicker__day-name {
+            // }
+          }
+          //   .react-datepicker__header__dropdown {
+          //   }
+          //   .react-datepicker__header__dropdown--scroll {
+          //   }
+        }
+        // concret calendar
+        .react-datepicker__month {
+          padding: 5%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          // monts weeks all
+          .react-datepicker__week {
+            display: flex;
+            height: 7vmin;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--white);
+            .react-datepicker__day {
+              cursor: pointer;
+
+              font-size: var(--p);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex: 1;
+            //   width: calc(100% / 12);
+              height: 80%;
+              &:hover {
+                  outline: 1px solid var(--blue);
+                  outline-offset: -1px;
+              }
+              &:focus {
+                outline: none;
+                background-color: var(--blue);
+                background-image: radial-gradient(
+                  4em at 0% 80%,
+                  #311ca1,
+                  transparent
+                );
+              }
+            }
+            .react-datepicker__day--disabled {
+              &:focus, &:hover {
+                outline: none;
+                background: none;
+              }
+              color: #b2a3c026;
+              cursor: default;
+            }
+          }
+        }
+      }
+    }
+  }
+}

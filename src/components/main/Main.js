@@ -33,18 +33,11 @@ function Main() {
             <span className="page-number">{`0${pageNumber}`}</span>
           </div>
           <div className="left-nav__content__back">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
+            {/* 
+                you also can use this second variant for display 12 small sircls
+                or just use radial-gradient css variant
+                <span /> <span /> <span /> <span /> <span /> <span /> <span /> <span /> <span /> <span /> <span /> <span /> 
+            */}
           </div>
         </div>
       </nav>
@@ -62,7 +55,9 @@ function Main() {
         >
           <span className="link-content" tabIndex="0">
             <SvgMaker icon="arrow-long" />
-            <span className="link-content__text">{isContactPage ? "back home" : "contact us"}</span>
+            <span className="link-content__text">
+              {isContactPage ? "back home" : "contact us"}
+            </span>
           </span>
         </NavLink>
       </div>

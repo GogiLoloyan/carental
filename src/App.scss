@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+// main navigation
 @import "./styles/navbar.scss";
-@import "./styles/main/home/home.scss";
+// navigation for only 7 main page's navigation
 @import "./styles/main/navigation.scss";
+// main 7 page's
+@import "./styles/main/home/home.scss";
+@import "./styles/main/services/services.scss";
 
 * {
   margin: 0;
@@ -20,8 +24,16 @@
   --red: #ff0505;
   --blue: #6149e1;
   --purple: #9642f2;
+  --card-fon: #1f202d;
+  --paragraf: #484156;
   /* site background */
   --bg-fon: #110f1f;
+
+  /* animation opacity */
+  --anim-op-05s: anim-opacity 0.5s ease-in-out forwards;
+  --anim-op-delay1: 80ms;
+  --anim-op-delay2: 160ms;
+  --anim-op-delay3: 240ms;
 
   /* keyboard-only focus styles */
   --focus-outline: 1px dotted var(--blue);
@@ -30,4 +42,23 @@
 
 body {
   background-color: var(--bg-fon);
+  user-select: none;
+}
+
+@keyframes anim-car {
+  from {
+    left: -880px;
+  }
+  to {
+    left: -218px;
+  }
+}
+
+@keyframes anim-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
