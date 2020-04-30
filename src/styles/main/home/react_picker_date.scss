@@ -2,8 +2,9 @@
   // date
   .react-datepicker-popper {
     left: var(--home-calendar-left) !important;
-    transform: translate(-50%, -65vh) !important;
-    color: var(--white);
+    transform: translate(-50%, -63vh) !important;
+    color: #dad5df;
+    font-weight: 300;
 
     .react-datepicker {
       background-color: #221e3c;
@@ -52,6 +53,8 @@
           );
           .react-datepicker__current-month {
             padding-top: 0.5em;
+            font-weight: 500;
+
           }
           .react-datepicker__day-names {
             align-self: stretch;
@@ -80,17 +83,14 @@
             height: 7vmin;
             align-items: center;
             justify-content: space-between;
-            color: var(--white);
             .react-datepicker__day {
-              cursor: pointer;
-
-              font-size: var(--p);
+              flex: 1;
+              height: 80%;
               display: flex;
               align-items: center;
               justify-content: center;
-              flex: 1;
-            //   width: calc(100% / 12);
-              height: 80%;
+              font-size: var(--p);
+              cursor: pointer;
               &:hover {
                   outline: 1px solid var(--blue);
                   outline-offset: -1px;

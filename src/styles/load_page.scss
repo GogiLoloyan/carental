@@ -1,0 +1,99 @@
+.load-page {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2em;
+  font-weight: 300;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background-image: radial-gradient(
+      35vh at 100% 100%,
+      #9642f215,
+      transparent 300%
+    ),
+    radial-gradient(35vh at 0% 0%, #9642f21c, transparent 300%),
+    radial-gradient(40vh at 70% 18%, #0c091052, transparent 150%),
+    radial-gradient(64vh 45vh at -8% 100%, #9642f226, transparent 178%),
+    radial-gradient(64vh 45vh at -8% 100%, #9642f222, transparent 138%),
+    radial-gradient(64vh 45vh at -8% 100%, #9642f215, transparent 71%),
+    radial-gradient(64vh 45vh at -8% 100%, #9642f210, transparent 52%),
+    radial-gradient(45vh at 68% 2%, #9642f220, transparent 141%),
+    radial-gradient(45vh at 68% 2%, #9642f215, transparent 111%),
+    radial-gradient(45vh at 68% 2%, #9642f20f, transparent 87%),
+    radial-gradient(45vh at 68% 2%, #9642f209, transparent 57%),
+    radial-gradient(45vh at 68% 2%, #9642f20f, transparent 111%),
+    radial-gradient(45vh at 95% 42%, #9642f207, transparent 87%),
+    radial-gradient(45vh at 95% 42%, #9642f202, transparent 69%);
+  &__start {
+    margin: 0.3em;
+    // animation: loading-page-animate-margin 2s ease-in-out infinite;
+  }
+  &__end {
+    margin: 0.3em;
+    // animation: loading-page-animate-margin 2s ease-in-out infinite;
+  }
+  &__design-letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    color: var(--blue);
+    &__border {
+      position: absolute;
+      width: 1.5em;
+      height: 1.5em;
+      border: 1px solid var(--blue);
+      animation: loading-page-animate 4000ms ease infinite;
+    }
+    &__letter {
+      animation: loading-page-animate-letter 4000ms ease infinite;
+    }
+  }
+}
+
+@keyframes loading-page-animate-margin {
+  0% {
+    margin: 0 0.3em;
+  }
+  50% {
+    margin: 0 0.6em;
+  }
+  100% {
+    margin: 0 0.3em;
+  }
+}
+
+@keyframes loading-page-animate {
+  0% {
+    transform: rotate(0deg);
+    border-color: var(--blue);
+  }
+  50% {
+    transform: rotate(-92deg);
+    border-color: var(--red);
+  }
+  100% {
+    transform: rotate(-180deg);
+    border-color: var(--blue);
+  }
+}
+
+@keyframes loading-page-animate-letter {
+  0% {
+    color: var(--blue);
+  }
+  50% {
+    color: var(--red);
+  }
+  100% {
+    color: var(--blue);
+  }
+}

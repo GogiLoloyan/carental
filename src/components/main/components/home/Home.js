@@ -7,8 +7,8 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
-import SearchFreeCar from "./components/SearchFreeCar";
 import GradientBackground from "./components/GradientBackground";
+import SearchFreeCar from "./components/SearchFreeCar";
 import Header from "./components/Header";
 
 function Home() {
