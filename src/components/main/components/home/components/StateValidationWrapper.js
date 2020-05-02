@@ -12,11 +12,11 @@ const StateValidationWrapper = ({ children }) => {
 
   const isError = ({ error }) => !error;
   const _OnSubmit = () => {
-    const hasError = [$pickUp, $pickUpDate, $returnDate].every(isError);
-    if (hasError) {
-      $error.set(true);
-    } else {
+    const validate = [$pickUp, $pickUpDate, $returnDate].every(isError);
+    if (validate) {
       alert("done");
+    } else {
+      $error.set(true);
     }
   };
 
