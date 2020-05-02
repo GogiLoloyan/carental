@@ -67,6 +67,7 @@
       flex-direction: column;
       justify-content: space-between;
       padding: 27px 10px 20px 27px;
+      // will-change: transform;
       transform: scale(1);
       background-color: var(--card-fon);
       background-image: radial-gradient(

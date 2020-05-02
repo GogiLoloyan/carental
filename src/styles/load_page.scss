@@ -1,4 +1,5 @@
 .load-page {
+  --cubic-bezier: cubic-bezier(0.8, 0, 0.2, 1);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -13,11 +14,8 @@
   color: var(--white);
   text-transform: uppercase;
   letter-spacing: 3px;
-  background-image: radial-gradient(
-      35vh at 100% 100%,
-      #9642f215,
-      transparent 300%
-    ),
+  background-image: 
+    radial-gradient(35vh at 100% 100%, #9642f215, transparent 300%),
     radial-gradient(35vh at 0% 0%, #9642f21c, transparent 300%),
     radial-gradient(40vh at 70% 18%, #0c091052, transparent 150%),
     radial-gradient(64vh 45vh at -8% 100%, #9642f226, transparent 178%),
@@ -33,11 +31,9 @@
     radial-gradient(45vh at 95% 42%, #9642f202, transparent 69%);
   &__start {
     margin: 0.3em;
-    // animation: loading-page-animate-margin 2s ease-in-out infinite;
   }
   &__end {
     margin: 0.3em;
-    // animation: loading-page-animate-margin 2s ease-in-out infinite;
   }
   &__design-letter {
     display: flex;
@@ -51,23 +47,11 @@
       width: 1.5em;
       height: 1.5em;
       border: 1px solid var(--blue);
-      animation: loading-page-animate 4000ms ease infinite;
+      animation: loading-page-animate 5000ms var(--cubic-bezier) infinite;
     }
     &__letter {
-      animation: loading-page-animate-letter 4000ms ease infinite;
+      animation: loading-page-animate-letter 5000ms var(--cubic-bezier) infinite;
     }
-  }
-}
-
-@keyframes loading-page-animate-margin {
-  0% {
-    margin: 0 0.3em;
-  }
-  50% {
-    margin: 0 0.6em;
-  }
-  100% {
-    margin: 0 0.3em;
   }
 }
 

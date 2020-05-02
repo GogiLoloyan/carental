@@ -13,13 +13,13 @@
         #0f0c1a,
         transparent
       );
-      //   .react-datepicker__triangle {
-      //   }
+      // .react-datepicker__triangle { }
       &__navigation {
-        color: inherit;
-        padding: 0.5em;
         position: relative;
+        padding: 0.5em;
         border: none;
+        color: inherit;
+        font-weight: 100;
         background-color: transparent;
         cursor: pointer;
         &:focus {
@@ -45,16 +45,14 @@
 
           height: 10vh;
           width: 90%;
-          background-color: var(--blue);
           background-image: radial-gradient(
             88vmin at 0% 50%,
-            #311ca1,
+            #423c6e61,
             transparent
           );
           .react-datepicker__current-month {
             padding-top: 0.5em;
             font-weight: 500;
-
           }
           .react-datepicker__day-names {
             align-self: stretch;
@@ -62,6 +60,7 @@
             flex-direction: row;
             align-items: flex-end;
             justify-content: space-between;
+            padding-bottom: 0.2em;
             // day name * 7
             // .react-datepicker__day-name {
             // }
@@ -92,21 +91,21 @@
               font-size: var(--p);
               cursor: pointer;
               &:hover {
-                  outline: 1px solid var(--blue);
-                  outline-offset: -1px;
+                outline: 1px solid #58528861;
+                outline-offset: -1px;
               }
               &:focus {
                 outline: none;
-                background-color: var(--blue);
                 background-image: radial-gradient(
-                  4em at 0% 80%,
-                  #311ca1,
+                  15vmin at 0% 80%,
+                  #58528861,
                   transparent
                 );
               }
             }
             .react-datepicker__day--disabled {
-              &:focus, &:hover {
+              &:focus,
+              &:hover {
                 outline: none;
                 background: none;
               }
@@ -117,5 +116,12 @@
         }
       }
     }
+  }
+}
+
+.tools {
+  :not(.react-datepicker-wrapper + .react-datepicker-wrapper).react-datepicker-wrapper {
+    border: 1px;
+    --home-calendar-left: 50%;
   }
 }
