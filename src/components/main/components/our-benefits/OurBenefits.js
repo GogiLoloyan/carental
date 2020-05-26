@@ -1,7 +1,7 @@
 import React from "react";
 
-function Benefits() {
+function OurBenefits() {
   return <div></div>;
 }
 
-export default Benefits;
+export default OurBenefits;

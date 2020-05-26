@@ -1,6 +1,6 @@
 import React from "react";
 
-const LoadPage = () => {
+const Loader = () => {
   return (
     <div className="load-page">
       <span className="load-page__start">ca</span>
@@ -13,4 +13,4 @@ const LoadPage = () => {
   );
 };
 
-export default LoadPage;
+export default Loader;

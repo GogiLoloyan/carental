@@ -1,0 +1,42 @@
+.menu-hamburger {
+	div {
+		width: 25px;
+		height: 13px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		span {
+			height: 3px;
+			background-color: var(--white);
+			transition: width 0.2s;
+			&:first-child {
+				width: 70%;
+			}
+			&:last-child {
+				width: 100%;
+			}
+		}
+		&:hover {
+			cursor: pointer;
+			span {
+				&:first-child {
+					width: 100%;
+				}
+				&:last-child {
+					width: 70%;
+				}
+			}
+		}
+	}
+	/* keyboard-only focus */
+	&:focus {
+		div {
+			outline: var(--focus-outline);
+			outline-offset: var(--focus-outline-offset);
+		}
+	}
+	&:focus,
+	& div:focus {
+		outline: none;
+	}
+}

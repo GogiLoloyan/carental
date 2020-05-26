@@ -1,40 +1,25 @@
-import React from "react";
-import { Switch, Route, useLocation } from "react-router-dom";
+import React from 'react'
+import { useSelector } from 'react-redux'
 
-import Home from "./components/home/Home";
-import Services from "./components/services/Services";
-import Vehicles from "./components/vehicles/Vehicles";
-import Benefits from "./components/benefits/Benefits";
-import Testimonials from "./components/testimonials/Testimonials";
-import Stations from "./components/stations/Stations";
-import ContactUS from "./components/contact us/ContactUS";
+import LeftNav from './components/LeftNav'
+import RightNav from './components/RightNav'
+import Background from './components/Background'
+import Content from './components/Content'
 
-import RightNav from "./components/RightNav";
-import LeftNav from "./components/LeftNav";
+const Main = () => {
+	const currentPageNumber = useSelector(({ routes }) => routes.current_path.id)
+	const isContactPage = currentPageNumber === 7
 
-function Main() {
-  const locState = useLocation().state;
-  const colorTeam = locState ? locState.team : "red";
-  const currentPageNumber = locState ? locState.page : 1;
-  const isContactPage = currentPageNumber === 7;
+	return (
+		<section className='main-page'>
+			<LeftNav currentPageNumber={currentPageNumber} />
 
-  return (
-    <section className="main-page">
-      <LeftNav currentPageNumber={currentPageNumber} colorTeam={colorTeam} />
+			<Background />
+			<Content />
 
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/services" exact component={Services} />
-        <Route path="/vehicles" component={Vehicles} />
-        <Route path="/benefits" component={Benefits} />
-        <Route path="/testimonials" component={Testimonials} />
-        <Route path="/stations" component={Stations} />
-        <Route path="/contact-us" component={ContactUS} />
-      </Switch>
-
-      <RightNav isContactPage={isContactPage} />
-    </section>
-  );
+			<RightNav isContactPage={isContactPage} />
+		</section>
+	)
 }
 
-export default Main;
+export default Main

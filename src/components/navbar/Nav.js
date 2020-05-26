@@ -1,14 +1,30 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useCallback } from 'react'
+import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
-const Nav = () => (
-    <ul className="nav">
-        <li><NavLink to={{ pathname: "/services", state: { team: "blue", page: 2 } }} data-blue activeClassName="active"><span tabIndex="-1">services</span></NavLink></li>
-        <li><NavLink to={{ pathname: "/vehicles", state: { team: "red", page: 3 } }} data-red activeClassName="active"><span tabIndex="-1">vehicles</span></NavLink></li>
-        <li><NavLink to={{ pathname: "/benefits", state: { team: "blue", page: 4 } }} data-blue activeClassName="active"><span tabIndex="-1">our benefits</span></NavLink></li>
-        <li><NavLink to={{ pathname: "/testimonials", state: { team: "red", page: 5 } }} data-red activeClassName="active"><span tabIndex="-1">testimonials</span></NavLink></li>
-        <li><NavLink to={{ pathname: "/stations", state: { team: "blue", page: 6 } }} data-blue activeClassName="active"><span tabIndex="-1">stations</span></NavLink></li>
-    </ul>
-);
+const Nav = () => {
+    const { routes, themes: {themes} } = useSelector(store => store)
+    const mainPaths = routes.main_paths.slice(1, -1)
+    
+	const getTheme = useCallback(
+		theme_name => {
+			const color = themes[theme_name].color
+			return { '--theme': color }
+		},
+		[themes]
+	)
 
-export default Nav;
+	return (
+		<ul className='nav'>
+			{mainPaths.map(({ path, theme_name }, i) => (
+				<li style={getTheme(theme_name)} key={i}>
+					<NavLink to={path} activeClassName='active'>
+						<span tabIndex='-1'>{path.replace(/-/g, ' ')}</span>
+					</NavLink>
+				</li>
+			))}
+		</ul>
+	)
+}
+
+export default Nav

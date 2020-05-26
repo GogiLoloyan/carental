@@ -1,45 +1,33 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import * as imgs from "./helper/LoadBefore";
-import "./App.scss";
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { Switch, Route } from 'react-router-dom'
 
-import Navbar from "./components/navbar/Navbar";
-import Main from "./components/main/Main";
+import { useLooder } from './hooks/looder.hook'
+import { useTheme } from './hooks/themeColor.hook'
 
-import LooseCars from "./components/other/loose-cars/LooseCars";
-import AutoParts from "./components/other/auto-parts/AutoParts";
-import Partners from "./components/other/partners/Partners";
-
-import LoadPage from "./LoadPage";
+import Loader from './LoadPage'
+import Main from './components/main/Main'
+import Navbar from './components/navbar/Navbar'
 
 function App() {
-  const [loading, setLoading] = useState(true);
-  useEffect(
-    () =>
-      window.addEventListener("load", () =>
-        setTimeout(() => {
-          setLoading(false);
-        }, 2000)
-      ),
-    []
-  );
-  return (
-    <Router>
-      {loading ? (
-        <LoadPage />
-      ) : (
-        <>
-          <Navbar />
-          <Switch>
-            <Route path="/services/loose-cars" component={LooseCars} />
-            <Route path="/services/auto-parts" component={AutoParts} />
-            <Route path="/partners" component={Partners} />;{/* main pages */}
-            <Route path="/" component={Main} />
-          </Switch>
-        </>
-      )}
-    </Router>
-  );
+	useTheme()
+	const loading = useLooder()
+	const theme = useSelector(store => store.themes.current_theme)
+
+	return loading ? (
+		<Loader />
+	) : (
+		<div className='app' style={{ '--theme': theme.color }}>
+			<Navbar />
+			<Switch>
+				{/* <Route exact path='/services/loose-cars' component={LooseCars} />
+				<Route exact path='/services/auto-parts' component={AutoParts} />
+				<Route exact path='/partners' component={Partners} /> */}
+
+				<Route path='/' component={Main} />
+			</Switch>
+		</div>
+	)
 }
 
-export default App;
+export default App

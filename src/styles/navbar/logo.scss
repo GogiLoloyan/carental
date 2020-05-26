@@ -1,0 +1,34 @@
+.logo {
+	padding-left: 5px;
+	text-decoration: none;
+	span {
+		display: flex;
+		align-items: center;
+		font-size: var(--h3);
+		font-weight: 300;
+		color: var(--white);
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		.design-letter {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 1.5em;
+			height: 1.5em;
+			border: 1px solid var(--theme);
+			color: var(--theme);
+			margin: 0 4px;
+		}
+	}
+	/* keyboard-only focus */
+	&:focus {
+		span {
+			outline: var(--focus-outline);
+			outline-offset: var(--focus-outline-offset);
+		}
+	}
+	&:focus,
+	span:focus {
+		outline: none;
+	}
+}

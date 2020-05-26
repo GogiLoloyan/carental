@@ -1,61 +1,75 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
-// animations
-@import "./styles/animations.scss";
+@import './styles/mixins.scss';
+
+@import './styles/animations.scss';
 
 // loading
-@import "./styles/load_page.scss";
+@import './styles/load_page.scss';
 
 // navbar
-@import "./styles/navbar.scss";
+@import './styles/navbar/index.scss';
 
 // main
 /// common for main
-@import "./styles/main/navigation.scss";
+@import './styles/main/navigation.scss';
 /// main content
-@import "./styles/main/home/home.scss";
-@import "./styles/main/services/services.scss";
-@import "./styles/main/vehicles/vehicles.scss";
-@import "./styles/main/benefits/benefits.scss";
-@import "./styles/main/testimonials/testimonials.scss";
-@import "./styles/main/stations/stations.scss";
-@import "./styles/main/contact_us/contact_us.scss";
+@import './styles/main/home/home.scss';
+@import './styles/main/services/services.scss';
+@import './styles/main/vehicles/vehicles.scss';
+@import './styles/main/benefits/benefits.scss';
+@import './styles/main/testimonials/testimonials.scss';
+@import './styles/main/stations/stations.scss';
+@import './styles/main/contact_us/contact_us.scss';
+
+
+@import './styles/backgrounds/index.scss';
 
 * {
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
 
-  // -- font sizes
-  --h1: 55px;
-  --h2: 24px;
-  --h3: 20px;
-  --p2: 18px;
-  --p: 15px;
+	// -- font sizes
+	--h1: 55px;
+	--h2: 24px;
+	--h3: 20px;
+	--p2: 18px;
+	--p: 15px;
 
-  // -- colors
-  --white: #b2a3c0;
-  --red: #ff0505;
-  --blue: #6149e1;
-  --purple: #9642f2;
-  --card-fon: #1f202d;
-  --paragraf: #484156;
-  // --- site background
-  --bg-fon: #110f1f;
+	// -- colors
+	--white: #b2a3c0;
+	--red: #ff0505;
+	--blue: #6149e1;
+	--purple: #9642f2;
+	--card-fon: #1f202d;
+	--paragraf: #484156;
+	// --- site background
+	--bg-fon: #110f1f;
 
-  // -- animation opacity
-  --anim-op-05s: anim-opacity 0.5s ease-in-out forwards;
-  --anim-op-delay1: 80ms;
-  --anim-op-delay2: 160ms;
-  --anim-op-delay3: 240ms;
+	// -- animation opacity
+	--anim-op-05s: anim-opacity 0.5s ease-in-out forwards;
+	--anim-op-delay1: 80ms;
+	--anim-op-delay2: 160ms;
+	--anim-op-delay3: 240ms;
 
-  // -- keyboard-only focus styles
-  --focus-outline: 1px dotted var(--blue);
-  --focus-outline-offset: 10px;
+	// -- keyboard-only focus styles
+	--focus-outline: 1px dotted var(--blue);
+	--focus-outline-offset: 10px;
 }
 
 body {
-  background-color: var(--bg-fon);
-  user-select: none;
-  overflow: hidden;
+	background-color: var(--bg-fon);
+	user-select: none;
+	overflow: hidden;
+}
+
+.app {
+	display: grid;
+	grid-template-rows: 57px 1fr;
+	height: 100vh;
+	grid-template-areas:
+		'navbar'
+		'content';
 }
