@@ -62,9 +62,6 @@
 		grid-template-rows: repeat(2, 10vw);
 		grid-gap: 1vw;
 
-		/// for optimization ///
-		transform: translateX(0) translateZ(10px);
-
 		.card {
 			display: flex;
 			flex-direction: column;
