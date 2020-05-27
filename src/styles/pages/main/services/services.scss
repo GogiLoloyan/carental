@@ -1,14 +1,21 @@
 .services {
+	grid-area: content;
 	display: flex;
 	position: relative;
-	// flex-flow: row wrap;
-	background-image: radial-gradient(23vw at 70% 53%, #0d0a16cf, transparent);
+	height: -webkit-fill-available;
+	// background-image: radial-gradient(23vw at 70% 53%, #0d0a16cf, transparent);
+
+	&__header--motion-wrapper {
+		position: absolute;
+		left: 10vw;
+		top: 10vh;
+		white-space: nowrap;
+	}
 
 	&__header {
 		position: absolute;
-		left: 10vw;
-		bottom: 50vh;
 		user-select: none;
+
 		h1 {
 			position: relative;
 			z-index: 2000;
@@ -16,7 +23,7 @@
 			color: var(--white);
 			font-weight: 400;
 			margin-bottom: 15vh;
-			// animation: var(--anim-op-05s);
+
 			&::after {
 				content: attr(data-text);
 				width: max-content;
@@ -52,14 +59,21 @@
 		}
 	}
 
+	&__cards--motion-wrapper {
+		position: relative;
+		display: flex;
+		width: max-content;
+		z-index: 2000;
+	}
+
 	&__cards {
 		position: absolute;
 		align-self: center;
 		margin-top: -5vh;
 		left: 45vw;
 		display: grid;
-		grid-template-columns: repeat(2, 19vw);
-		grid-template-rows: repeat(2, 10vw);
+		grid-template-columns: repeat(2, 260px);
+    grid-template-rows: repeat(2, 135px);
 		grid-gap: 1vw;
 
 		.card {
@@ -80,7 +94,7 @@
 			transition: transform 150ms ease-in-out;
 			cursor: pointer;
 
-			/// for optimization ///
+			// for optimization //
 			box-shadow: 0px 0px 800px 0px #6f56ac00;
 
 			&:nth-child(1) {
@@ -140,7 +154,7 @@
 					letter-spacing: 0.5px;
 					font-weight: 500;
 
-					/// line under the text ///
+					// line under the text //
 					&::after {
 						content: '';
 						position: absolute;
@@ -170,7 +184,7 @@
 				);
 				z-index: 5000;
 				box-shadow: 0px 0px 80px 0px #6f56ac7d;
-        transition: transform 0.3s ease-out;
+				transition: transform 0.3s ease-out;
 
 				.header {
 					&__icon {
@@ -213,7 +227,7 @@
 					}
 
 					&__text {
-						/// line under the text ///
+						// line under the text //
 						&::after {
 							background-color: var(--white);
 							box-shadow: 0 0 11px 0px var(--white);

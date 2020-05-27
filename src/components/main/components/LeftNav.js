@@ -13,6 +13,7 @@ const LeftNav = ({ currentPageNumber }) => (
 				</div>
 				<span className='left-nav__number'>{`0${currentPageNumber}`}</span>
 			</div>
+
 			<div className='left-nav__back'>
 				{[...Array(12)].map((_, i) => (
 					<span key={i} />

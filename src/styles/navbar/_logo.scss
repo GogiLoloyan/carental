@@ -1,6 +1,7 @@
 .logo {
 	padding-left: 5px;
 	text-decoration: none;
+
 	span {
 		display: flex;
 		align-items: center;
@@ -20,6 +21,7 @@
 			margin: 0 4px;
 		}
 	}
+	
 	/* keyboard-only focus */
 	&:focus {
 		span {

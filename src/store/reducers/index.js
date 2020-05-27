@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import themesReducer from './themes_reducer'
-import routesReducer from './routes_reducer'
+import themesReducer from './themesReducer'
+import routesReducer from './routesReducer'
 
 export default combineReducers({
 	themes: themesReducer,

@@ -1,5 +1,5 @@
-import { CHANGE_CURRENT_THEME } from './action_types'
-import { CHANGE_CURRENT_PATH } from './action_types'
+import { CHANGE_CURRENT_THEME } from './actionTypes'
+import { CHANGE_CURRENT_PATH } from './actionTypes'
 
 export const changeCurrentTheme = theme => ({
 	type: CHANGE_CURRENT_THEME,

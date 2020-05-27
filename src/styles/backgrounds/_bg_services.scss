@@ -34,12 +34,14 @@
 				transparent 114vh
 			);
 	}
-	&__car {
+	&__car--wrapper {
 		position: absolute;
 		bottom: 0;
-    // left: -218px;
-    width: 65vw;
-    min-width: 700px;
+		width: 65vw;
+		min-width: 700px;
+	}
+	&__car {
+		width: 100%;
 		filter: drop-shadow(127px 23px 5vw #6149e12b);
 	}
 }

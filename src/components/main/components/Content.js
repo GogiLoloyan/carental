@@ -1,5 +1,4 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import { AnimatePresence } from 'framer-motion'
 import { Route, Switch, useLocation } from 'react-router-dom'
 
@@ -11,29 +10,24 @@ import ContactUS from './contact-us/ContactUS'
 import OurBenefits from './our-benefits/OurBenefits'
 import Testimonials from './testimonials/Testimonials'
 
-import MotionLayout from '../../layouts/MotionLayout'
-
 function MainPageContent() {
 	const location = useLocation()
-	const mainPaths = useSelector(store => store.routes.main_paths)
-
-	const components = [
-		Home,
-		Services,
-		Vehicles,
-		OurBenefits,
-		Testimonials,
-		Stations,
-		ContactUS
+	
+	const pages = [
+		{ page: Home, path: '/' },
+		{ page: Services, path: '/services' },
+		{ page: Vehicles, path: '/vehicles' },
+		{ page: OurBenefits, path: '/our-benefits' },
+		{ page: Testimonials, path: '/testimonials' },
+		{ page: Stations, path: '/stations' },
+		{ page: ContactUS, path: '/contact-us' }
 	]
 
 	return (
 		<AnimatePresence>
 			<Switch location={location} key={location.pathname}>
-				{mainPaths.map(({ path, id }, i) => (
-					<Route exact key={id} path={`/${path}`}>
-						{() => <MotionLayout>{components[i]}</MotionLayout>}
-					</Route>
+				{pages.map(({ path, page }) => (
+					<Route exact path={path} key={path} component={page} />
 				))}
 			</Switch>
 		</AnimatePresence>

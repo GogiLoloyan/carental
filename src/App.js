@@ -12,17 +12,20 @@ import Navbar from './components/navbar/Navbar'
 function App() {
 	useTheme()
 	const loading = useLooder()
-	const theme = useSelector(store => store.themes.current_theme)
+	const { currentTheme } = useSelector(({ themes }) => themes)
 
 	return loading ? (
 		<Loader />
 	) : (
-		<div className='app' style={{ '--theme': theme.color }}>
+		<div className='app' style={{ '--theme': currentTheme.color }}>
 			<Navbar />
 			<Switch>
-				{/* <Route exact path='/services/loose-cars' component={LooseCars} />
-				<Route exact path='/services/auto-parts' component={AutoParts} />
-				<Route exact path='/partners' component={Partners} /> */}
+				{/* 
+					<Route exact path='/services/loose-cars' component={LooseCars} />
+					<Route exact path='/services/auto-parts' component={AutoParts} />
+					<Route exact path='/partners' component={Partners} /> 
+					...
+				*/}
 
 				<Route path='/' component={Main} />
 			</Switch>

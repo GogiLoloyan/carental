@@ -6,11 +6,16 @@
 	flex-direction: column;
 	justify-content: space-between;
 	padding: 15vh 7vw 8vh 7vw;
+
+	&__header--motion-wrapper {
+		align-self: flex-end;
+	}
+	
 	&__header {
 		position: relative;
-		align-self: flex-end;
 		display: flex;
 		flex-direction: column;
+
 		h1 {
 			position: relative;
 			font-size: 120px;
@@ -18,8 +23,7 @@
 			color: var(--white);
 			line-height: 80%;
 			opacity: 0.99;
-			// opacity: 0;
-			// animation: var(--anim-op-05s);
+
 			&::after {
 				content: attr(data-text);
 				width: max-content;
@@ -34,6 +38,7 @@
 				z-index: -1;
 			}
 		}
+
 		.help {
 			position: relative;
 			align-self: center;
@@ -45,8 +50,7 @@
 			text-transform: uppercase;
 			margin: 4vh 0 8vh 0;
 			filter: drop-shadow(10% 23px 5vw var(--red));
-			// opacity: 0;
-			// animation: var(--anim-op-05s) var(--anim-op-delay1);
+
 			&::before {
 				content: '';
 				position: absolute;
@@ -56,6 +60,7 @@
 				width: 100%;
 				background-color: var(--red);
 			}
+
 			&::after {
 				content: '';
 				position: absolute;
@@ -67,11 +72,11 @@
 				filter: blur(54px);
 			}
 		}
+
 		.description {
 			position: relative;
 			left: 6%;
-			// opacity: 0;
-			// animation: var(--anim-op-05s) var(--anim-op-delay2);
+
 			h2 {
 				font-size: var(--h3);
 				color: var(--white);
@@ -79,6 +84,7 @@
 				line-height: 50%;
 				margin-bottom: 1em;
 			}
+
 			p {
 				font-size: var(--p);
 				font-weight: 500;
@@ -87,14 +93,14 @@
 			}
 		}
 	}
+
 	&__search {
 		position: relative;
 		width: 100%;
 		height: 10vh;
 		display: flex;
 		align-items: center;
-		// opacity: 0;
-		// animation: var(--anim-op-05s) var(--anim-op-delay3);
+
 		.tools {
 			position: relative;
 			height: 100%;
@@ -113,11 +119,13 @@
 					p:not(.error) {
 						color: #9c89c0;
 					}
+
 					svg {
 						fill: #e4d1f5;
 					}
 				}
 			}
+
 			.react-datepicker-wrapper {
 				.react-datepicker__input-container {
 					height: 100%;
@@ -131,6 +139,7 @@
 				align-items: center;
 				justify-content: space-between;
 				border-right: 2px solid #363452;
+
 				p {
 					margin-left: 2em;
 					font-size: var(--p);
@@ -140,6 +149,7 @@
 					color: #7a6b96;
 					transition: color 0.3s;
 				}
+
 				svg {
 					margin-right: 2em;
 					position: relative;
@@ -147,6 +157,7 @@
 					top: -0.1em;
 					fill: var(--white);
 				}
+
 				.error {
 					position: absolute;
 					bottom: 11vh;
@@ -155,22 +166,27 @@
 					cursor: default;
 				}
 			}
+
 			//   &__geo {
 			//   }
 			&__up-date {
 				height: 100%;
 			}
+
 			& > div + div + div:not(.react-datepicker-wrapper) {
 				--home-calendar-left: 50%;
 			}
+
 			& > div + div + div + div:not(.react-datepicker-wrapper) {
 				--home-calendar-left: calc(100% / 6 * 5);
 			}
+
 			&__return-date {
 				height: 100%;
 				border: none !important;
 			}
 		}
+
 		.btn-search {
 			position: relative;
 			height: 100%;
@@ -179,6 +195,7 @@
 			border: none;
 			cursor: pointer;
 			background: transparent;
+
 			&__inner {
 				height: 100%;
 				display: flex;
@@ -195,6 +212,7 @@
 				text-transform: uppercase;
 				color: var(--white);
 			}
+
 			/* keyboard-only focus */
 			&:hover,
 			&:focus {
@@ -208,6 +226,7 @@
 					box-shadow: 0px 0px 3vh 0px #201131d3;
 				}
 			}
+
 			/* keyboard-only focus */
 			&:focus {
 				.btn-search__inner {
@@ -216,6 +235,7 @@
 					outline-offset: 1px;
 				}
 			}
+
 			&:focus,
 			&__inner:focus {
 				outline: none;

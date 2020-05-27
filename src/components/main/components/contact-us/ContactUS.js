@@ -1,7 +1,7 @@
 import React from "react";
 
 function ContactUS() {
-  return <div></div>;
+  return <section className='main-content'></section>;
 }
 
 export default ContactUS;

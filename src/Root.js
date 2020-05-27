@@ -8,7 +8,7 @@ import './App.scss'
 
 const store = configureStore()
 
-function Root() {
+const Root = () => {
 	return (
 		<React.StrictMode>
 			<BrowserRouter>

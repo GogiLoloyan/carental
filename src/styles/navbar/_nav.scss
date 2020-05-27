@@ -5,11 +5,14 @@
 	justify-content: flex-end;
 	margin-right: 6vw;
 	list-style: none;
+
 	li {
 		padding: 0px 20px;
 		--text-color: var(--white);
+
 		a {
 			text-decoration: none;
+			
 			span {
 				font-size: var(--p);
 				font-weight: 500;
@@ -18,9 +21,11 @@
 				text-transform: uppercase;
 			}
 		}
+
 		.active {
 			--text-color: var(--theme);
 		}
+
 		/* keyboard-only focus */
 		a:focus {
 			span {
@@ -29,11 +34,13 @@
 				outline-offset: var(--focus-outline-offset);
 			}
 		}
+
 		a:focus,
 		span:focus {
 			outline: none;
 		}
 	}
+
 	@media (min-width: 1281px) {
 		//CSS
 	}

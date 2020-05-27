@@ -1,10 +1,10 @@
 import React from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 import { Switch, Route, useLocation } from 'react-router-dom'
 
 import HomeBackground from '../../backgrounds/HomeBackground'
+import OpacityMotion from '../../../motion/layouts/OpacityMotion'
 import ServicesBackground from '../../backgrounds/ServicesBackground'
-import { variants, transition } from '../../../motion/concret/background'
 
 const Background = () => {
 	const location = useLocation()
@@ -16,31 +16,18 @@ const Background = () => {
 	return (
 		<AnimatePresence>
 			<Switch location={location} key={location.pathname}>
-				{components.map(({ Component, path }, i) => (
-					<Route exact path={path}>
+				{components.map(({ Component, path }) => (
+					<Route exact path={path} key={path}>
 						{() => (
-							<MotionWrapper>
+							<OpacityMotion>
 								<Component />
-							</MotionWrapper>
-						)}	
+							</OpacityMotion>
+						)}
 					</Route>
 				))}
 			</Switch>
 		</AnimatePresence>
 	)
 }
-
-const MotionWrapper = ({ children }) => (
-	<motion.div
-		initial='initial'
-		animate='enter'
-		exit='exit'
-		variants={variants}
-		transition={transition}
-		className='bg-wrapper'
-	>
-		{children}
-	</motion.div>
-)
 
 export default Background

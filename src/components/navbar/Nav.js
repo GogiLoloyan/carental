@@ -1,14 +1,18 @@
-import React, { useEffect, useCallback } from 'react'
+import React, { useCallback } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 const Nav = () => {
-    const { routes, themes: {themes} } = useSelector(store => store)
-    const mainPaths = routes.main_paths.slice(1, -1)
-    
+	const {
+		routes,
+		themes: { themes }
+	} = useSelector(store => store)
+	
+	const mainPaths = Object.values(routes.mainPaths).slice(1, -1)
+
 	const getTheme = useCallback(
-		theme_name => {
-			const color = themes[theme_name].color
+		themeName => {
+			const color = themes[themeName].color
 			return { '--theme': color }
 		},
 		[themes]
@@ -16,8 +20,8 @@ const Nav = () => {
 
 	return (
 		<ul className='nav'>
-			{mainPaths.map(({ path, theme_name }, i) => (
-				<li style={getTheme(theme_name)} key={i}>
+			{mainPaths.map(({ path, themeName }) => (
+				<li style={getTheme(themeName)} key={path}>
 					<NavLink to={path} activeClassName='active'>
 						<span tabIndex='-1'>{path.replace(/-/g, ' ')}</span>
 					</NavLink>

@@ -1,8 +1,6 @@
-@import './main';
-
 .left-nav {
-	position: relative;
 	grid-area: left;
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
