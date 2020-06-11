@@ -1,5 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Root from './Root'
+import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
 
-ReactDOM.render(<Root />, document.getElementById('root'))
+import { configureStore } from './store'
+
+import Routes from './routes'
+
+import './App.scss'
+
+const store = configureStore()
+
+ReactDOM.render(
+	<Provider store={store}>
+		<BrowserRouter>
+			<Routes />
+		</BrowserRouter>
+	</Provider>,
+	document.getElementById('root')
+)

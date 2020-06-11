@@ -9,7 +9,7 @@ export const useTheme = () => {
 	const dispatch = useDispatch()
 	const {
 		routes: { mainPaths },
-		themes: { themes }
+		themes: { themes, currentTheme }
 	} = useSelector(store => store)
 
 	useEffect(() => {
@@ -22,5 +22,7 @@ export const useTheme = () => {
 
 		dispatch(changeCurrentTheme(theme))
 		dispatch(changeCurrentPath(id))
-	}, [location, mainPaths, themes, dispatch ])
+	}, [location, mainPaths, themes, dispatch])
+
+	return { currentTheme }
 }

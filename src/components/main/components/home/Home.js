@@ -1,20 +1,30 @@
-import React from 'react'
-import SearchFreeCar from './components/SearchFreeCar'
+import React, { Fragment } from 'react'
+
 import Header from './components/Header'
+import SearchFreeCar from './components/SearchFreeCar'
+
+import HomeBackground from '../../../backgrounds/HomeBackground'
+
 import OpacityMotion from '../../../../motion/layouts/OpacityMotion'
 import TranslateYMotion from '../../../../motion/layouts/TranslateYMotion'
 
 function Home() {
 	return (
-		<section className='home main-content'>
-			<OpacityMotion className='home__header--motion-wrapper'>
-				<Header />
+		<Fragment>
+			<OpacityMotion>
+				<HomeBackground />
 			</OpacityMotion>
-			
-			<TranslateYMotion>
-				<SearchFreeCar />
-			</TranslateYMotion>
-		</section>
+
+				<section className='home main-content'>
+					<OpacityMotion className='home__header--motion-wrapper'>
+						<Header />
+					</OpacityMotion>
+
+					<TranslateYMotion>
+						<SearchFreeCar />
+					</TranslateYMotion>
+				</section>
+		</Fragment>
 	)
 }
 

@@ -1,34 +1,48 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, useLocation } from 'react-router-dom'
 
 import { useLooder } from './hooks/looder.hook'
 import { useTheme } from './hooks/themeColor.hook'
 
 import Loader from './LoadPage'
 import Main from './components/main/Main'
-import Navbar from './components/navbar/Navbar'
+import Header from './components/Layout/Header'
+
+/*************************** */
+
+import Home from './components/main/components/home/Home'
+import Services from './components/main/components/services/Services'
+import Vehicles from './components/main/components/vehicles/Vehicles'
+import OurBenefits from './components/main/components/our-benefits/OurBenefits'
+import Testimonials from './components/main/components/testimonials/Testimonials'
+import Stations from './components/main/components/stations/Stations'
+import ContactUS from './components/main/components/contact-us/ContactUS'
+
+import { AnimatePresence } from 'framer-motion'
 
 function App() {
-	useTheme()
+	const { currentTheme } = useTheme()
 	const loading = useLooder()
-	const { currentTheme } = useSelector(({ themes }) => themes)
+
+	const location = useLocation()
 
 	return loading ? (
 		<Loader />
 	) : (
 		<div className='app' style={{ '--theme': currentTheme.color }}>
-			<Navbar />
-			<Switch>
-				{/* 
-					<Route exact path='/services/loose-cars' component={LooseCars} />
-					<Route exact path='/services/auto-parts' component={AutoParts} />
-					<Route exact path='/partners' component={Partners} /> 
-					...
-				*/}
+			<Header />
 
-				<Route path='/' component={Main} />
-			</Switch>
+			<AnimatePresence>
+				<Switch location={location} key={location.pathname}>
+					<Route path='/' component={Home} exact />
+					<Route path='/services' component={Services} exact />
+					<Route path='/vehicles' component={Vehicles} exact />
+					<Route path='/our-benefits' component={OurBenefits} exact />
+					<Route path='/testimonials' component={Testimonials} exact />
+					<Route path='/stations' component={Stations} exact />
+					<Route path='/contact-us' component={ContactUS} exact />
+				</Switch>
+			</AnimatePresence>
 		</div>
 	)
 }

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 
 let isScrolled = true
 
-const useWheelScroll = ({ currentPath, mainPaths }) => {
+export const useWheelScroll = ({ currentPath, mainPaths }) => {
 	const history = useHistory()
 
 	useEffect(() => {
@@ -35,5 +35,3 @@ const useWheelScroll = ({ currentPath, mainPaths }) => {
 		history.push(`/${path}`)
 	}
 }
-
-export default useWheelScroll
