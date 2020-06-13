@@ -7,7 +7,7 @@ import { configureStore } from './store'
 
 import Routes from './routes'
 
-import './App.scss'
+import './index.scss'
 
 const store = configureStore()
 

@@ -2,11 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Header from './Header'
-import LeftNav from './LeftNav'
-import RightNav from './RightNav'
 
 import { useTheme } from '../../hooks/themeColor.hook'
 import { useWheelScroll } from '../../hooks/wheelScroll.hook'
+
 
 /**
  * Layout component
@@ -21,11 +20,8 @@ const Layout = ({ children, routes }) => {
 		<div className='app' style={{ '--theme': currentTheme.color }}>
 			<Header />
 			<section className='main-page'>
-				<LeftNav />
 				{children}
-				<RightNav />
 			</section>
-			<div className='animation-container' />
 		</div>
 	)
 }
