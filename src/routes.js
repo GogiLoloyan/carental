@@ -44,7 +44,7 @@ const Routes = () => {
 					</Switch>
 				</AnimatePresence>
 			</PageNavigationLayout>
-			{/* other routers */}
+			{/* other routes */}
 		</HeaderLayout>
 	)
 }
