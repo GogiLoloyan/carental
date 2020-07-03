@@ -26,7 +26,7 @@ const Routes = () => {
 	const loading = useLooder();
 	const location = useLocation();
 
-	// if (loading) return <Loader />
+	if (loading) return <Loader />
 
 	return (
 		<RootLayout>
