@@ -19,8 +19,8 @@ const Service = ({ header, description, img }) => {
 		const { offsetWidth, offsetHeight } = card;
 		const { left, top } = card.getBoundingClientRect();
 
-		const x = pageX - left - card.offsetWidth / 2;
-		const y = pageY - top - card.offsetHeight / 2;
+		const x = pageX - left - offsetWidth / 2;
+		const y = pageY - top - offsetHeight / 2;
 
 		cardRef.current.style.transform = `
 			rotateX(${-y / 15}deg)
