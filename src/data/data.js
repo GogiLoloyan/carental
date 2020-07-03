@@ -1,7 +1,7 @@
 import React from "react";
 import SvgMaker from "../helper/SvgMaker";
 
-const svg = <SvgMaker icon="arrow-short" />;
+const svg = <SvgMaker icon="arrow" />;
 
 export const serchFreeCarsTools = {
   pickUp: {
@@ -25,8 +25,8 @@ export const serchFreeCarsTools = {
 };
 
 export const optionsForSerchFreeCarsSelect = [
-  { city: "Erevan", active: true },
-  { city: "Gyumri", active: true },
-  { city: "Abovyan", active: false },
-  { city: "Vanadzor", active: false }
+  { city: "Erevan", isActive: true },
+  { city: "Gyumri", isActive: true },
+  { city: "Abovyan", isActive: false },
+  { city: "Vanadzor", isActive: false }
 ];

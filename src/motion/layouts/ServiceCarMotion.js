@@ -1,43 +1,32 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { easeOutExpo } from '../transitions'
+import React from 'react';
+import { motion } from 'framer-motion';
 
-export const variants = {
+import { easeOutExpo } from '../transitions';
+
+const variants = {
 	initial: {
-		opacity: 0,
 		x: '-100%',
-		transition: {
-			...easeOutExpo
-		}
+		opacity: 0
 	},
-	enter: {
-		opacity: 1,
+	animate: {
 		x: '-25%',
-		transition: {
-			...easeOutExpo,
-			delay: 0.5
-		}
+		opacity: 1,
+		transition: easeOutExpo
 	},
 	exit: {
 		opacity: 0,
-		x: '-100%',
-		transition: {
-			...easeOutExpo,
-			ease: 'easeOut'
-		}
+		transition: easeOutExpo
 	}
-}
+};
 
-const ServiceCarMotion = ({ children, className = '' }) => (
+export const ServiceCarMotion = ({ children, className = '' }) => (
 	<motion.div
-		initial='initial'
-		animate='enter'
-		exit='exit'
+		initial="initial"
+		animate="animate"
+		exit="exit"
 		variants={variants}
 		className={className}
 	>
 		{children}
 	</motion.div>
-)
-
-export default ServiceCarMotion
+);

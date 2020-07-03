@@ -2,7 +2,8 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { changeCurrentPath, changeCurrentTheme } from '../store/actions/actions'
+import { changeCurrentPath, changeCurrentTheme } from 'store/actions/actions'
+
 
 export const useTheme = () => {
 	const location = useLocation()
@@ -22,7 +23,7 @@ export const useTheme = () => {
 
 		dispatch(changeCurrentTheme(theme))
 		dispatch(changeCurrentPath(id))
-	}, [location, mainPaths, themes, dispatch])
+	}, [location])
 
 	return { currentTheme }
 }

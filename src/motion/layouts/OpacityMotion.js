@@ -1,39 +1,29 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from 'react';
+import { motion } from 'framer-motion';
 
-import { easeOutExpo } from '../transitions'
+import { easeOutExpo } from '../transitions';
 
-export const variats = {
+/**
+ * @type {import('../variants').Variants} variants - Different states for animating, almost like keyframes of motion elements
+ */
+const variants = {
 	initial: {
-		opacity: 0,
-		transitions: {
-			...easeOutExpo
-		}
+		opacity: 0
 	},
-	enter: {
+	animate: {
 		opacity: 1,
-		transitions: {
-			...easeOutExpo
-		}
-	},
-	exit: {
-		opacity: 0,
-		transitions: {
-			...easeOutExpo
-		}
+		transitions: easeOutExpo
 	}
-}
+};
 
-const OpacityMotion = ({ children, className = '' }) => (
+export const OpacityMotion = ({ children, className = '' }) => (
 	<motion.div
-		initial='initial'
-		animate='enter'
-		exit='exit'
-		variants={variats}
+		initial="initial"
+		animate="animate"
+		exit="initial"
+		variants={variants}
 		className={className}
 	>
 		{children}
 	</motion.div>
-)
-
-export default OpacityMotion
+);

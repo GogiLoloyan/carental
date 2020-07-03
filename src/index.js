@@ -1,21 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-import { BrowserRouter } from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
-import { configureStore } from './store'
+import { configureStore } from './store';
 
-import Routes from './routes'
+import './index.scss';
+import App from './App';
 
-import './index.scss'
 
-const store = configureStore()
+const store = configureStore();
 
 ReactDOM.render(
 	<Provider store={store}>
 		<BrowserRouter>
-			<Routes />
+			<App />
 		</BrowserRouter>
 	</Provider>,
 	document.getElementById('root')
-)
+);

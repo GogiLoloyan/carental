@@ -1,6 +1,6 @@
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
-import RightNav from './RightNav'
+import RightNav from './RightNav';
 
 /**
  * mapStateToProps
@@ -11,6 +11,6 @@ const mapStateToProps = ({
 	routes: {
 		currentPath: { path }
 	}
-}) => ({ path })
+}) => ({ isContactPage: path === 'contact-us' });
 
-export default connect(mapStateToProps)(RightNav)
+export default connect(mapStateToProps)(RightNav);

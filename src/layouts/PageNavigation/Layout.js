@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 
-import LeftNav from './LeftNav'
-import RightNav from './RightNav'
+import LeftNav from './LeftNav';
+import RightNav from './RightNav';
 
 
 /**
@@ -10,16 +10,14 @@ import RightNav from './RightNav'
  * @param {React.Node} children - children component
  * @returns {React.Node} - layout component
  */
-const Layout = ({ children }) => {
-	return (
-		<Fragment>
-			<LeftNav /> {children} <RightNav />
-		</Fragment>
-	)
-}
+const Layout = ({ children }) => (
+	<Fragment>
+		<LeftNav /> {children} <RightNav />
+	</Fragment>
+);
 
 Layout.propTypes = {
 	children: PropTypes.node.isRequired
-}
+};
 
-export default Layout
+export default Layout;

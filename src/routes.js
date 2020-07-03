@@ -1,22 +1,21 @@
-import React from 'react'
-import { AnimatePresence } from 'framer-motion'
-import { Route, Switch, useLocation } from 'react-router-dom'
+import React from 'react';
+import { AnimatePresence } from 'framer-motion';
+import { Route, Switch, useLocation } from 'react-router-dom';
 
-import Loader from './LoadPage';
-import { useLooder } from './hooks/looder.hook'
+import Home from './screens/Home';
+import Services from './screens/Services';
+import Vehicles from './screens/Vehicles';
+import OurBenefits from './screens/OurBenefits';
+import Testimonials from './screens/Testimonials';
+import Stations from './screens/Stations';
+import ContactUS from './screens/ContactUs';
 
-import Home from './components/main/components/home/Home'
-import Services from './components/main/components/services/Services'
-import Vehicles from './components/main/components/vehicles/Vehicles'
-import OurBenefits from './components/main/components/our-benefits/OurBenefits'
-import Testimonials from './components/main/components/testimonials/Testimonials'
-import Stations from './components/main/components/stations/Stations'
-import ContactUS from './components/main/components/contact-us/ContactUS'
+// 1. root layout - with header
+// 2. main pages layout - with right and left navigation
+import { RootLayout, RLNavigationLayout } from './layouts';
 
-// root layout - with header
-import HeaderLayout from './layouts/Header'
-// main pages layout - with right and left navigation
-import PageNavigationLayout from './layouts/PageNavigation'
+import Loader from './screens/Loader';
+import { useLooder } from './hooks';
 
 
 /**
@@ -24,29 +23,29 @@ import PageNavigationLayout from './layouts/PageNavigation'
  * @returns {React.Node} - routes
  */
 const Routes = () => {
-	const loading = useLooder()
-	const location = useLocation()
+	const loading = useLooder();
+	const location = useLocation();
 
-	if (loading) return <Loader />
+	// if (loading) return <Loader />
 
 	return (
-		<HeaderLayout>
-			<PageNavigationLayout>
-				<AnimatePresence>
+		<RootLayout>
+			<RLNavigationLayout>
+				<AnimatePresence exitBeforeEnter>
 					<Switch location={location} key={location.pathname}>
-						<Route path='/' component={Home} exact />
-						<Route path='/services' component={Services} exact />
-						<Route path='/vehicles' component={Vehicles} exact />
-						<Route path='/our-benefits' component={OurBenefits} exact />
-						<Route path='/testimonials' component={Testimonials} exact />
-						<Route path='/stations' component={Stations} exact />
-						<Route path='/contact-us' component={ContactUS} exact />
+						<Route path="/" component={Home} exact />
+						<Route path="/services" component={Services} exact />
+						<Route path="/vehicles" component={Vehicles} exact />
+						<Route path="/our-benefits" component={OurBenefits} exact />
+						<Route path="/testimonials" component={Testimonials} exact />
+						<Route path="/stations" component={Stations} exact />
+						<Route path="/contact-us" component={ContactUS} exact />
 					</Switch>
 				</AnimatePresence>
-			</PageNavigationLayout>
+			</RLNavigationLayout>
 			{/* other routes */}
-		</HeaderLayout>
-	)
-}
+		</RootLayout>
+	);
+};
 
-export default Routes
+export default Routes;

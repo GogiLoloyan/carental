@@ -1,8 +1,8 @@
-import React from 'react'
-import { Route } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import React from 'react';
+import { Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import Layout from '../layouts/PageNavigation'
+import { PageNavigation as Layout } from 'layouts';
 
 
 /**
@@ -15,14 +15,14 @@ const RouteWithLayout = ({ component: Component, ...rest }) => (
 		{...rest}
 		render={props => (
 			<Layout>
-					<Component {...props} />
+				<Component {...props} />
 			</Layout>
 		)}
 	/>
-)
+);
 
 RouteWithLayout.propTypes = {
 	component: PropTypes.node.isRequired
-}
+};
 
-export default RouteWithLayout
+export default RouteWithLayout;

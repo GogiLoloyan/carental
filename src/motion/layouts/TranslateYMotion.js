@@ -1,42 +1,31 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { easeOutExpo } from '../transitions'
+import React from 'react';
+import { motion } from 'framer-motion';
 
-export const variants = {
+import { easeOutExpo } from '../transitions';
+
+const variants = {
 	initial: {
-		opacity: -0.2,
-		y: '10vh',
-		transition: {
-			...easeOutExpo
-		}
+		y: '8vh',
+		opacity: 0
 	},
 	enter: {
-		opacity: 1,
 		y: 0,
-		transition: {
-			...easeOutExpo,
-			delay: 0.5
-		}
+		opacity: 1,
+		transition: { ...easeOutExpo, delay: 0.4 }
 	},
 	exit: {
-		opacity: -0.2,
-		y: '10vh',
-		transition: {
-			...easeOutExpo
-		}
+		opacity: 0
 	}
-}
+};
 
-const TranslateYMotion = ({ children, className = '' }) => (
+export const TranslateYMotion = ({ children, className = '' }) => (
 	<motion.div
-		initial='initial'
-		animate='enter'
-		exit='exit'
+		initial="initial"
+		animate="enter"
+		exit="exit"
 		variants={variants}
 		className={className}
 	>
 		{children}
 	</motion.div>
-)
-
-export default TranslateYMotion
+);

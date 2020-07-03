@@ -1,35 +1,26 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { SliderWrapper, Slider, Thumb, Track, Dot } from './styles';
 
 /**
  * LeftNav component
  * @returns {React.Node} - left nav component
  */
 const LeftNav = ({ currentPageNumber }) => (
-	<nav className='left-nav' role='navigation'>
-		<div className='left-nav__content'>
-			<div
-				className='left-nav__front'
-				style={{ '--top': currentPageNumber - 1 }}
-			>
-				<div className='left-nav__line-container'>
-					<div className='left-nav__line'></div>
-					<div className='left-nav__line--shadow'></div>
-				</div>
-				<span className='left-nav__number'>{`0${currentPageNumber}`}</span>
-			</div>
-
-			<div className='left-nav__back'>
+	<SliderWrapper>
+		<Slider>
+			<Track>
 				{[...Array(12)].map((_, i) => (
-					<span key={i} />
+					<Dot key={i} />
 				))}
-			</div>
-		</div>
-	</nav>
-)
+			</Track>
+			<Thumb value={`0${currentPageNumber}`} />
+		</Slider>
+	</SliderWrapper>
+);
 
 LeftNav.propTypes = {
 	currentPageNumber: PropTypes.number.isRequired
-}
+};
 
-export default LeftNav
+export default LeftNav;

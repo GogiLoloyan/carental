@@ -1,38 +1,26 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { NavLink } from 'react-router-dom'
-import SvgMaker from '../../../helper/SvgMaker'
+import React from 'react';
+import PropTypes from 'prop-types';
+
+import SvgMaker from 'helper/SvgMaker';
+import { NavLinkWrapper, StyledNavlink, Text } from './styles';
 
 /**
  * RightNav component
  * @returns {React.Node} - right nav component
  */
-const RightNav = ({ path }) => {
-	const isContactPage = path === 'contact-us'
-	return (
-		<div className='right-nav'>
-			<NavLink
-				className='right-nav__link'
-				tabIndex='0'
-				data-order={isContactPage}
-				to={{
-					pathname: isContactPage ? '/' : '/contact-us',
-					state: { team: 'red', page: isContactPage ? 1 : 7 }
-				}}
-			>
-				<span className='link-content' tabIndex='0'>
-					<SvgMaker icon='arrow-long' />
-					<span className='link-content__text'>
-						{isContactPage ? 'back home' : 'contact us'}
-					</span>
-				</span>
-			</NavLink>
-		</div>
-	)
-}
+const RightNav = ({ isContactPage }) => (
+	<NavLinkWrapper>
+		<StyledNavlink to={isContactPage ? '/' : 'contact-us'}>
+			<Text iscontactpage={!!isContactPage}>
+				<span>{isContactPage ? 'back home' : 'contact us'}</span>
+				<SvgMaker icon="arrow-long" />
+			</Text>
+		</StyledNavlink>
+	</NavLinkWrapper>
+);
 
 RightNav.propTypes = {
-	path: PropTypes.string.isRequired
-}
+	isContactPage: PropTypes.bool.isRequired
+};
 
-export default RightNav
+export default RightNav;
