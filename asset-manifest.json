@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/carental/static/css/main.35ad2e0c.chunk.css",
+    "main.js": "/carental/static/js/main.ddafde81.chunk.js",
+    "main.js.map": "/carental/static/js/main.ddafde81.chunk.js.map",
+    "runtime-main.js": "/carental/static/js/runtime-main.d8fa3db9.js",
+    "runtime-main.js.map": "/carental/static/js/runtime-main.d8fa3db9.js.map",
+    "static/js/2.98925619.chunk.js": "/carental/static/js/2.98925619.chunk.js",
+    "static/js/2.98925619.chunk.js.map": "/carental/static/js/2.98925619.chunk.js.map",
+    "index.html": "/carental/index.html",
+    "precache-manifest.e06dda0f77dbd6b2b845da61941bf8f6.js": "/carental/precache-manifest.e06dda0f77dbd6b2b845da61941bf8f6.js",
+    "service-worker.js": "/carental/service-worker.js",
+    "static/css/main.35ad2e0c.chunk.css.map": "/carental/static/css/main.35ad2e0c.chunk.css.map",
+    "static/js/2.98925619.chunk.js.LICENSE.txt": "/carental/static/js/2.98925619.chunk.js.LICENSE.txt",
+    "static/media/services_car.png": "/carental/static/media/services_car.5938fcdc.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d8fa3db9.js",
+    "static/js/2.98925619.chunk.js",
+    "static/css/main.35ad2e0c.chunk.css",
+    "static/js/main.ddafde81.chunk.js"
+  ]
+}
