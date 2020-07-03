@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 
-import { TranslateYMotion } from 'motion/layouts';
+import { TranslateYMotion } from 'Motion/layouts';
+import { HomeBackground as Background } from 'Components/backgrounds';
 
-import { HomeBackground as Background } from 'components/backgrounds';
 import SearchForm from './SearchForm';
 import Header from './Header';
 

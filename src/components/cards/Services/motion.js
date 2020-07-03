@@ -1,6 +1,6 @@
-import { easeOutExpo } from 'motion/transitions';
+import { easeOutExpo } from 'Motion/transitions';
 /**
- * @typedef {import('../../../motion/variants').Variants} Variants - Different states for animating, almost like keyframes of motion elements
+ * @typedef {import('../../../Motion/variants').Variants} Variants - Different states for animating, almost like keyframes of motion elements
  */
 
 /**

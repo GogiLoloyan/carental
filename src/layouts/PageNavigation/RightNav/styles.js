@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled, { css, keyframes } from 'styled-components';
 
-import { createKeyboardOnlyFocus } from 'utils';
+import { createKeyboardOnlyFocus } from 'Utils';
 
 const ticking = keyframes`
 		from {

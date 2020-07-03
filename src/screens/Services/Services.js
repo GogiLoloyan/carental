@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
 
+import { ServicesBackground as Background } from 'Components/backgrounds';
+
 import Cards from './Cards';
 import Header from './Header';
-import { ServicesBackground as Background } from 'components/backgrounds';
 
 import { Section } from './styles';
 

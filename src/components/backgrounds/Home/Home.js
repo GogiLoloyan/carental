@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { OpacityMotion } from 'motion/layouts';
+import { OpacityMotion } from 'Motion/layouts';
 
 
 const Home = () => (

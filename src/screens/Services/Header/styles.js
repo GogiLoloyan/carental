@@ -12,7 +12,7 @@ const translateY = keyframes`
 	}
 `;
 
-const ServiceHeader = styled(motion.header)`
+const Wrapper = styled(motion.header)`
 	grid-row: 1 / 7;
 	align-self: end;
 	justify-self: center;
@@ -22,8 +22,9 @@ const ServiceHeader = styled(motion.header)`
 	user-select: none;
 `;
 
-const H1 = styled(motion.h1).attrs(() => ({
-	"data-bg-text": "OUR SERVICES"
+const Title = styled(motion.h1).attrs(() => ({
+	'data-bg-text': 'OUR SERVICES',
+	'aria-label': 'car rental services description'
 }))`
 	position: relative;
 	z-index: 2000;
@@ -69,4 +70,4 @@ const Description = styled(motion.p)`
 	}
 `;
 
-export { ServiceHeader, H1, Description };
+export { Wrapper, Title, Description };

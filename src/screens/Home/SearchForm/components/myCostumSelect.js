@@ -1,8 +1,8 @@
 import React, { useState, useRef, forwardRef, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 
-import { optionsForSerchFreeCarsSelect as options } from 'data/data';
-import { useOutsideClickClose } from 'hooks';
+import { optionsForSerchFreeCarsSelect as options } from 'Data/data';
+import { useOutsideClickClose } from 'Hooks';
 
 
 const Select = ({ selected: value, onChange, customInput }) => {

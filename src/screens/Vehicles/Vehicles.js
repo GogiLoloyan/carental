@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { HomeBackground as Background } from 'components/backgrounds';
+import { HomeBackground as Background } from 'Components/backgrounds';
 
 /**
  * Vehicles component

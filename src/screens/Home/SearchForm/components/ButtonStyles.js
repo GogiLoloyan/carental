@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { createKeyboardOnlyFocus } from 'utils/styles';
+import { createKeyboardOnlyFocus } from 'Utils';
 
 const Text = styled.span.attrs(() => ({ tabIndex: '-1' }))`
 	height: 100%;

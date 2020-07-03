@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { ServicesBackground as Background } from 'components/backgrounds';
+import { ServicesBackground as Background } from 'Components/backgrounds';
 
 /**
  * Contact us component

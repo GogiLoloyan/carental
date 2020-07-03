@@ -1,7 +1,9 @@
 import React from 'react';
 
+import { ServiceCard as Card } from 'Components/cards';
+
 import { CardsList } from './styles';
-import { ServiceCard as Card } from 'components/cards';
+import { motion } from './motion';
 
 const servicesData = [
 	{
@@ -23,31 +25,11 @@ const servicesData = [
 ];
 
 /**
- * @type {import('../../../motion/variants').Variants} stagger -  motion variants for stagger children
- */
-const stagger = {
-	animate: {
-		transition: {
-			staggerChildren: 0.1
-		}
-	},
-	exit: {
-		opacity: 0
-	}
-};
-
-/**
  * Services cards component
  * @returns {React.Node} - services cards component
  */
 const Cards = () => (
-	<CardsList
-		initial="initial"
-		animate="animate"
-		exit="exit"
-		variants={stagger}
-		aria-label="our services"
-	>
+	<CardsList {...motion} aria-label="our services">
 		{servicesData.map((data, i) => (
 			<Card {...data} key={i} />
 		))}

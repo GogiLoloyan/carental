@@ -1,8 +1,8 @@
-import { opacityMotion } from 'motion/concret';
-import { easeOutExpo } from 'motion/transitions';
+import { opacityMotion } from 'Motion/concret';
+import { easeOutExpo } from 'Motion/transitions';
 
 /**
- * @type {import('../../../motion/variants').Variants} variants - Different states for animating, almost like keyframes of motion elements
+ * @type {import('../../../Motion/variants').Variants} variants - Different states for animating, almost like keyframes of motion elements
  */
 const variants = {
 	initial: {

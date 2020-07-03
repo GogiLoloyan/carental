@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { NavLink, Link } from 'react-router-dom';
-import { createKeyboardOnlyFocus } from 'utils';
+import { createKeyboardOnlyFocus } from 'Utils';
 
 const Letters = styled.h3`
 	display: flex;

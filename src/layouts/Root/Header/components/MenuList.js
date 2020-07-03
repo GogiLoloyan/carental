@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { createKeyboardOnlyFocus } from 'utils';
+import { createKeyboardOnlyFocus } from 'Utils';
 
 const MenuList = styled.ul`
 	flex: 1;

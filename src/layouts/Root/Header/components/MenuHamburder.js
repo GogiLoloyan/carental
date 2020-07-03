@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { createKeyboardOnlyFocus } from 'utils';
+import { createKeyboardOnlyFocus } from 'Utils';
 
 const MenuHamburger = styled.div`
 	width: 25px;

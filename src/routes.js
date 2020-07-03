@@ -2,20 +2,20 @@ import React from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { Route, Switch, useLocation } from 'react-router-dom';
 
-import Home from './screens/Home';
-import Services from './screens/Services';
-import Vehicles from './screens/Vehicles';
-import OurBenefits from './screens/OurBenefits';
-import Testimonials from './screens/Testimonials';
-import Stations from './screens/Stations';
-import ContactUS from './screens/ContactUs';
+import Home from './Screens/Home';
+import Services from './Screens/Services';
+import Vehicles from './Screens/Vehicles';
+import OurBenefits from './Screens/OurBenefits';
+import Testimonials from './Screens/Testimonials';
+import Stations from './Screens/Stations';
+import ContactUS from './Screens/ContactUs';
 
 // 1. root layout - with header
 // 2. main pages layout - with right and left navigation
-import { RootLayout, RLNavigationLayout } from './layouts';
+import { RootLayout, RLNavigationLayout } from 'Layouts';
 
-import Loader from './screens/Loader';
-import { useLooder } from './hooks';
+import Loader from './Screens/Loader';
+import { useLooder } from './Hooks';
 
 
 /**

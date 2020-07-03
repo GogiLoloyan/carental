@@ -2,7 +2,7 @@ import React from 'react';
 import DatePicker from 'react-datepicker';
 import Select from './myCostumSelect';
 import Resource from './Resource';
-import { serchFreeCarsTools as toolsData } from 'data/data';
+import { serchFreeCarsTools as toolsData } from 'Data/data';
 
 export const Tools = ({ $pickUp, $pickUpDate, $returnDate, displayError }) => {
 	const { pickUp, pickUpDate, returnDate } = toolsData;

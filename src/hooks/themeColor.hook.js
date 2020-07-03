@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { changeCurrentPath, changeCurrentTheme } from 'store/actions/actions'
+import { changeCurrentPath, changeCurrentTheme } from 'Store/actions/actions'
 
 
 export const useTheme = () => {

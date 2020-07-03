@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import Header from './Header'
 
-import { useTheme, useWheelScroll } from 'hooks'
+import { useTheme, useWheelScroll } from 'Hooks'
 
 
 /**
