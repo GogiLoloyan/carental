@@ -1,0 +1,116 @@
+// --------------------- colors --------------------- //
+$red: hsl(0, 100%, 51%);
+$blue: hsl(249, 72%, 58%);
+$purple: hsl(269, 86%, 60%);
+
+// --------------------- colors --------------------- //
+$colour-primary: hsl(163, 83%, 48%);
+$colour-secondary: hsl(216, 100%, 10%);
+$colour-accent: hsl(165, 100%, 92%);
+$colour-white: hsl(0, 0%, 100%);
+$colour-invalid: hsl(358, 67%, 57%);
+
+$txt-input-palette: (
+	active: (
+		bg: $colour-primary,
+		border: $colour-primary,
+		txt: $colour-white
+	),
+	focus: (
+		bg: $colour-primary,
+		border: $colour-primary,
+		txt: $colour-white
+	),
+	invalid: (
+		bg: $colour-invalid,
+		border: $colour-white,
+		txt: $colour-white
+	)
+);
+
+$font-size: (
+	logo: 7rem,
+	quote: 6rem,
+	heading: 5rem,
+	project-heading: 4rem,
+	label: 2rem
+);
+
+$breakpoints: (
+	mobile: 599px
+);
+
+// Accoutrement Config
+// -------------------
+
+$colors: (
+	// base color palette
+		'brand-blue': hsl(195, 100%, 43%),
+	'brand-red': hsl(0, 100%, 50%),
+	'brand-pink': hsl(330, 100%, 45%),
+	// color style guide 'background': hsl(0, 0%, 100%),
+	'text': 'brand-blue'
+		(
+			'shade': 80%
+		),
+	'action': 'brand-pink',
+	'focus': 'brand-blue'
+);
+
+$sizes: (
+	// base font size
+		'body-text': 22px,
+	// type sizes
+		'rhythm': 'body-text'
+		(
+			'minor-third': 2
+		),
+	'h1': 'body-text'
+		(
+			'minor-third': 3
+		),
+	'h2': 'body-text'
+		(
+			'minor-third': 2
+		),
+	'h3': 'body-text'
+		(
+			'minor-third': 1
+		),
+	// other 'corners': 3px,
+	'page': 30rem
+);
+
+$fonts: (
+	// hosted web font
+		'body':
+		(
+			'name': 'CenturyOldStyle',
+			'stack': (
+				'Baskerville',
+				'Palatino',
+				'Cambria',
+				'Georgia',
+				'serif'
+			),
+			'regular': 'CenturyOldStyle-regular',
+			// webfont file names...
+				'italic': 'CenturyOldStyle-italic',
+			'bold': 'CenturyOldStyle-bold'
+		),
+	// web-safe font stack
+	 'code': (
+			'name': 'Consolas',
+			'stack': (
+				'Menlo',
+				'Monaco',
+				'Lucida Console',
+				'Liberation Mono',
+				'DejaVu Sans Mono',
+				'Bitstream Vera Sans Mono',
+				'Courier New',
+				'monospace',
+				'serif'
+			)
+		)
+);
