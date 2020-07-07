@@ -27,7 +27,6 @@ export const createKeyboardOnlyFocus = (element, customStyles) => css`
 			}
 		}};
 	}
-
 	&:focus,
 	& ${element}:focus {
 		outline: none;
