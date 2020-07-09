@@ -1,9 +1,12 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 
 import { motionCard, motionElements } from './motion';
-import { Wrapper, Card, Icon, Bubbles } from './styles';
+import { Card, Icon, Bubbles } from './styles';
+
+import { use3dMouseMoveEffect } from 'Hooks';
+
 
 /**
  * Service card component
@@ -11,30 +14,14 @@ import { Wrapper, Card, Icon, Bubbles } from './styles';
  * @returns {React.Node} - service card component
  */
 const Service = ({ header, description, img }) => {
-	const cardRef = useRef(null);
-
-	const handleMouseMove = ({ pageX, pageY }) => {
-		const card = cardRef.current;
-
-		const { offsetWidth, offsetHeight } = card;
-		const { left, top } = card.getBoundingClientRect();
-
-		const x = pageX - left - offsetWidth / 2;
-		const y = pageY - top - offsetHeight / 2;
-
-		cardRef.current.style.transform = `
-			rotateX(${-y / 15}deg)
-			rotateY(${x / 30}deg) 
-			translate3d(${x / 30}px, ${y / 15}px, 0px)
-		`;
-	};
-
-	const handleMouseOut = () => {
-		cardRef.current.style.transform = '';
-	};
+	const {
+		ref: cardRef,
+		handleMouseMove,
+		handleMouseOut
+	} = use3dMouseMoveEffect();
 
 	return (
-		<Wrapper>
+		<Card.Wrapper>
 			<Card
 				ref={cardRef}
 				onMouseMove={handleMouseMove}
@@ -48,7 +35,7 @@ const Service = ({ header, description, img }) => {
 				<motion.h2 {...motionElements}>{header}</motion.h2>
 				<motion.p {...motionElements}>{description}</motion.p>
 			</Card>
-		</Wrapper>
+		</Card.Wrapper>
 	);
 };
 

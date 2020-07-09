@@ -2,10 +2,9 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { createKeyboardOnlyFocus } from 'Utils';
 
-const MenuList = styled.ul`
+const Menu = styled.ul`
 	flex: 1;
 	display: flex;
-	flex-direction: row;
 	justify-content: flex-end;
 	margin-right: 6vw;
 	list-style: none;
@@ -15,13 +14,13 @@ const MenuList = styled.ul`
 	}
 `;
 
-const MenuItem = styled.li`
+Menu.Item = styled.li`
 	padding: 0 20px;
 	--text-color: var(--white);
 	--theme: ${({ theme: { color } }) => color};
 `;
 
-const Text = styled.p`
+const P = styled.p.attrs(() => ({ tabIndex: '-1' }))`
 	font-size: var(--p);
 	font-weight: 500;
 	letter-spacing: 0.5px;
@@ -29,14 +28,16 @@ const Text = styled.p`
 	text-transform: uppercase;
 `;
 
-const StyledNavLink = styled(NavLink)`
+const StyledNavLink = styled(NavLink).attrs(() => ({
+	activeClassName: 'active'
+}))`
 	text-decoration: none;
 
-	&.${props => props.activeClassName} {
+	&.active {
 		--text-color: var(--theme);
 	}
 
-	${createKeyboardOnlyFocus(Text, "menu-text")}
+	${createKeyboardOnlyFocus(P, 'menu-text')}
 `;
 
-export { MenuList, MenuItem, StyledNavLink, Text };
+export { Menu, StyledNavLink, P };

@@ -1,4 +1,4 @@
 export * from './Nav';
 export * from './Logo';
-export * from './MenuList';
-export * from './MenuHamburder';
+export * from './Menu';
+export * from './Hamburder';

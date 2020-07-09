@@ -1,37 +1,5 @@
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
-
-const Wrapper = styled.li`
-	list-style: none;
-	z-index: 4000;
-	transform: scale(1);
-	transition: transform 150ms ease-in-out;
-	display: grid;
-
-	/* 3d effect */
-	perspective: 1200px;
-	transform-style: preserve-3d;
-
-
-	&:nth-child(1) {
-		transform-origin: 60% 140%;
-	}
-	&:nth-child(2) {
-		transform-origin: 40% 140%;
-	}
-	&:nth-child(3) {
-		transform-origin: 60% -40%;
-	}
-	&:nth-child(4) {
-		transform-origin: 40% -40%;
-	}
-
-	&:hover {
-		transform: scale(1.2);
-		transition: transform 300ms ease-out;
-		z-index: 5000;
-	}
-`;
+import { motion } from 'framer-motion'; 
 
 const Card = styled(motion.div)`
 	display: grid;
@@ -47,7 +15,6 @@ const Card = styled(motion.div)`
 	position: relative;
 	user-select: none;
 	cursor: pointer;
-
 
 	h2 {
 		position: relative;
@@ -90,6 +57,37 @@ const Card = styled(motion.div)`
 			background-color: var(--white);
 			box-shadow: 0 0 11px 0px var(--white);
 		}
+	}
+`;
+
+Card.Wrapper = styled.li`
+	list-style: none;
+	z-index: 4000;
+	transform: scale(1);
+	transition: transform 150ms ease-in-out;
+	display: grid;
+
+	/* 3d effect */
+	perspective: 1200px;
+	transform-style: preserve-3d;
+
+	&:nth-child(1) {
+		transform-origin: 60% 140%;
+	}
+	&:nth-child(2) {
+		transform-origin: 40% 140%;
+	}
+	&:nth-child(3) {
+		transform-origin: 60% -40%;
+	}
+	&:nth-child(4) {
+		transform-origin: 40% -40%;
+	}
+
+	&:hover {
+		transform: scale(1.2);
+		transition: transform 300ms ease-out;
+		z-index: 5000;
 	}
 `;
 
@@ -140,4 +138,4 @@ const Bubbles = styled.div`
 	}
 `;
 
-export { Wrapper, Card, Icon, Bubbles };
+export { Card, Icon, Bubbles };

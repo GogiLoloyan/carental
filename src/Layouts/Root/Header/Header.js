@@ -8,14 +8,12 @@ import {
 	Letters,
 	DesignedLetter,
 	// components Menu List
-	MenuList,
-	MenuItem,
+	Menu,
 	StyledNavLink,
-	Text,
-	// components Menu Hamburger
-	MenuHamburger,
-	Bar,
-	KeyboardOnlyFocus
+	P,
+	// components Hamburger
+	Hamburger,
+	Bar
 } from './components';
 
 
@@ -36,27 +34,27 @@ const Header = ({ themes }) => {
 	return (
 		<Nav>
 			<LogoLink to="/">
-				<Letters tabIndex="-1">
+				<Letters>
 					ca
 					<DesignedLetter>r</DesignedLetter>
 					ental
 				</Letters>
 			</LogoLink>
-			<MenuList>
+			<Menu>
 				{tabs.map(({ tab, theme }) => (
-					<MenuItem key={tab} theme={themes[theme]}>
-						<StyledNavLink to={tab} activeClassName="active">
-							<Text tabIndex="-1">{tab}</Text>
+					<Menu.Item key={tab} theme={themes[theme]}>
+						<StyledNavLink to={tab}>
+							<P>{tab.replace(/-/i, ' ')}</P>
 						</StyledNavLink>
-					</MenuItem>
+					</Menu.Item>
 				))}
-			</MenuList>
-			<KeyboardOnlyFocus tabIndex="0">
-				<MenuHamburger tabIndex="-1">
+			</Menu>
+			<Hamburger.Wrapper>
+				<Hamburger>
 					<Bar top />
 					<Bar />
-				</MenuHamburger>
-			</KeyboardOnlyFocus>
+				</Hamburger>
+			</Hamburger.Wrapper>
 		</Nav>
 	);
 };

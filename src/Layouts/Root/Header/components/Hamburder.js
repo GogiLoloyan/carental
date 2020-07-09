@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { createKeyboardOnlyFocus } from 'Utils';
 
-const MenuHamburger = styled.div`
+const Hamburger = styled.div.attrs(() => ({ tabIndex: '-1' }))`
 	width: 25px;
 	height: 13px;
 	display: flex;
@@ -16,13 +16,13 @@ const Bar = styled.div`
 	background-color: var(--white);
 	transition: width 0.2s;
 
-	${MenuHamburger}:hover & {
+	${Hamburger}:hover & {
 		width: ${({ top }) => (top ? '100%' : '70%')};
 	}
 `;
 
-const KeyboardOnlyFocus = styled.div`
-	${createKeyboardOnlyFocus(MenuHamburger)}
+Hamburger.Wrapper = styled.div.attrs(() => ({ tabIndex: '0' }))`
+	${createKeyboardOnlyFocus(Hamburger)}
 `;
 
-export { MenuHamburger, Bar, KeyboardOnlyFocus };
+export { Hamburger, Bar };
