@@ -17,7 +17,7 @@ import { RootLayout, RLNavigationLayout } from 'Layouts';
 import Loader from './Screens/Loader';
 import { useLooder } from './Hooks';
 
-import './index.scss';
+import './app.scss';
 
 
 /**
