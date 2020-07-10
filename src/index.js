@@ -10,6 +10,7 @@ import GlobalStyles from 'GlobalStyles';
 
 import Routes from 'routes';
 
+
 const theme = {};
 const store = configureStore();
 
