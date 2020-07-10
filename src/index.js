@@ -7,7 +7,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { configureStore } from 'Store';
 
 import GlobalStyles from 'GlobalStyles';
-import './index.scss';
 
 import Routes from 'routes';
 
