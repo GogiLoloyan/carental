@@ -13,7 +13,7 @@ import { use3dMouseMoveEffect } from 'Hooks';
  * @param {Object} props - props
  * @returns {React.Node} - service card component
  */
-const Service = ({ header, description, img }) => {
+const Service = ({ title, description, img }) => {
 	const {
 		ref: cardRef,
 		handleMouseMove,
@@ -32,7 +32,7 @@ const Service = ({ header, description, img }) => {
 					<Bubbles />
 					{img && <img src={img} alt="icon" />}
 				</Icon>
-				<motion.h2 {...motionElements}>{header}</motion.h2>
+				<motion.h2 {...motionElements}>{title}</motion.h2>
 				<motion.p {...motionElements}>{description}</motion.p>
 			</Card>
 		</Card.Wrapper>

@@ -5,32 +5,33 @@ import { ServiceCard as Card } from 'Components/cards';
 import { CardsList } from './styles';
 import { motion } from './motion';
 
-const servicesData = [
+const cards = [
 	{
-		header: 'Rent a car',
+		title: 'Rent a car',
 		description: 'Rent yout favorite car'
 	},
 	{
-		header: 'Auto parts',
+		title: 'Auto parts',
 		description: 'Track your pickups & delivery in real time'
 	},
 	{
-		header: 'Fuel Plans',
+		title: 'Fuel Plans',
 		description: 'See the nearest gas stations on yor way'
 	},
 	{
-		header: 'Car navigation',
+		title: 'Car navigation',
 		description: 'Select only shortest and best route'
 	}
 ];
+
 
 /**
  * Services cards component
  * @returns {React.Node} - services cards component
  */
 const Cards = () => (
-	<CardsList {...motion} aria-label="our services">
-		{servicesData.map((data, i) => (
+	<CardsList {...motion}>
+		{cards.map((data, i) => (
 			<Card {...data} key={i} />
 		))}
 	</CardsList>
