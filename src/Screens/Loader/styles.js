@@ -92,6 +92,7 @@ const DesignLetter = styled.div`
 	animation: ${animLetter} 5s var(--ease) infinite;
 `
 
+/* Export everything */
 export {
 	LoaderBackground,
 	LogoLetters,

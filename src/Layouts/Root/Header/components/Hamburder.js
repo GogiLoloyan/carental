@@ -25,4 +25,5 @@ Hamburger.Wrapper = styled.div.attrs(() => ({ tabIndex: '0' }))`
 	${createKeyboardOnlyFocus(Hamburger)}
 `;
 
+/* Export everything */
 export { Hamburger, Bar };

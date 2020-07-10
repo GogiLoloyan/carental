@@ -7,4 +7,5 @@ const Wrapper = styled.div.attrs(() => ({ className: 'home__search' }))`
 	position: relative;
 `;
 
+/* Export everything */
 export { Wrapper };

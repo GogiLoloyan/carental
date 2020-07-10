@@ -13,4 +13,5 @@ const CardsList = styled(motion.ul)`
 	grid-template-columns: repeat(2, 260px);
 `;
 
+/* Export everything */
 export { CardsList };

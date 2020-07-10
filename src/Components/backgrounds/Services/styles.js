@@ -49,4 +49,5 @@ const CarImage = styled(motion.img)`
 	/* filter: drop-shadow(127px 23px 5vw #6149e12b); */
 `;
 
+/* Export everything */
 export { Background, Gradient, CarImage };

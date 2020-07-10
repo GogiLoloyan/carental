@@ -30,4 +30,5 @@ const LogoLink = styled(Link)`
 	${createKeyboardOnlyFocus(Letters)}
 `;
 
+/* Export everything */
 export { LogoLink, DesignedLetter, Letters };

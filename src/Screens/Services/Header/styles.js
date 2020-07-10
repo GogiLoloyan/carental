@@ -70,4 +70,5 @@ const Description = styled(motion.p)`
 	}
 `;
 
+/* Export everything */
 export { Wrapper, Title, Description };

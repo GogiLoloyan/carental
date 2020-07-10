@@ -100,4 +100,5 @@ const Description = styled(motion.p)`
 	color: var(--paragraf);
 `;
 
+/* Export everything */
 export { HomeHeader, H1, H2, Help, Wrapper, Description };

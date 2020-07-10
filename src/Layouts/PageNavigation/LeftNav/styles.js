@@ -66,4 +66,5 @@ const Dot = styled.div`
 	background-color: var(--white);
 `;
 
+/* Export everything */
 export { SliderWrapper, Slider, Thumb, Track, Dot };

@@ -8,4 +8,5 @@ const Section = styled.section.attrs(() => ({ className: 'main-content' }))`
 	grid-template-columns: repeat(2, 1fr);
 `;
 
+/* Export everything */
 export { Section };

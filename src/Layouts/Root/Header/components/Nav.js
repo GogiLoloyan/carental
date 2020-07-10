@@ -12,4 +12,5 @@ const Nav = styled.nav`
 	z-index: 2000;
 `;
 
+/* Export everything */
 export { Nav };

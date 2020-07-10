@@ -40,4 +40,5 @@ const StyledNavLink = styled(NavLink).attrs(() => ({
 	${createKeyboardOnlyFocus(P, 'menu-text')}
 `;
 
+/* Export everything */
 export { Menu, StyledNavLink, P };
