@@ -1,9 +1,9 @@
 .main-page {
-	grid-area: content;
-	display: grid;
-	grid-template-columns: 5vw 1fr 5vw;
-	grid-template-rows: 100%;
-	grid-template-areas: 'left content right';
+	// grid-area: content;
+	// display: grid;
+	// grid-template-columns: 5vw 1fr 5vw;
+	// grid-template-rows: 100%;
+	// grid-template-areas: 'left content right';
 
 	.main-content {
 		grid-area: content;
