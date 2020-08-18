@@ -24,7 +24,7 @@ const Wrapper = styled(motion.header)`
 
 const Title = styled(motion.h1).attrs(() => ({
 	'data-bg-text': 'OUR SERVICES',
-	'aria-label': 'car rental services description'
+	'aria-label': 'car rental services description',
 }))`
 	position: relative;
 	z-index: 2000;
@@ -59,6 +59,7 @@ const Description = styled(motion.p)`
 	font-size: var(--p);
 	color: var(--paragraf);
 	font-weight: 500;
+	white-space: pre-wrap;
 
 	&::before {
 		content: '';

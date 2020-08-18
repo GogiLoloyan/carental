@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { configureStore } from 'Store';
 
 import Routes from 'routes';
+import Firebase, { FirebaseContext } from 'Components/Firebase';
 
 const theme = {};
 const store = configureStore();
@@ -15,9 +16,11 @@ ReactDOM.render(
 	<React.StrictMode>
 		<ReduxProvider store={store}>
 			<ThemeProvider theme={theme}>
-				<BrowserRouter>
-					<Routes />
-				</BrowserRouter>
+				<FirebaseContext.Provider value={new Firebase()}>
+					<BrowserRouter>
+						<Routes />
+					</BrowserRouter>
+				</FirebaseContext.Provider>
 			</ThemeProvider>
 		</ReduxProvider>
 	</React.StrictMode>,

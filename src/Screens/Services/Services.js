@@ -6,7 +6,7 @@ import Cards from './Cards';
 import Header from './Header';
 
 import { Section } from './styles';
-
+import { FirebaseContext } from 'Components/Firebase';
 
 /**
  * Services component
@@ -16,8 +16,14 @@ const Services = () => (
 	<Fragment>
 		<Background />
 		<Section>
-			<Header />
-			<Cards />
+			<FirebaseContext.Consumer>
+				{({ db }) => (
+					<>
+						<Header db={db} />
+						<Cards />
+					</>
+				)}
+			</FirebaseContext.Consumer>
 		</Section>
 	</Fragment>
 );

@@ -1,15 +1,16 @@
 import React from 'react';
 
 import { OpacityMotion } from 'Motion/layouts';
-
+import { Background } from './styles';
+import { opacityMotion } from '../Services/motion';
 
 const Home = () => (
-	<OpacityMotion>
-		<div className="bg bg-home">
+	<Background {...opacityMotion}>
+		<div className='bg bg-home'>
 			{/* <img className="bg-home" src="" /> */}
-			<div className="bg-home__gradient" />
+			<div className='bg-home__gradient' />
 		</div>
-	</OpacityMotion>
+	</Background>
 );
 
 export default Home;
